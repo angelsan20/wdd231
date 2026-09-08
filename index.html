@@ -3,25 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Document</title>
+    <meta name="description" content="Course Home Page wdd231">
+    <meta name="author" content="Angel Asdrubal Santafé Cárcamo">
+    <title>Course Home Page WDD231 - Angel Santafé</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Scripts -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/dates.js" defer></script>
+    <script src="scripts/course.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="" alt="">
-        <span>
-            ANGEL ASDRUBAL SANTAFÉ CÁRCAMO
-        </span>
-        <nav>
-            
+        <div class="logo-container">
+            <svg class="logo-svg" viewbox="0 0 100 100" width="40" height="40" aria-hidden="true">
+                <rect width="100" height="100" rx="15" fill="#2c3e50" />
+                <text x="50" y="65" font-size="50" fill="#ffffff" text-anchor="middle" font-weight="bold">AS</text>
+            </svg>
+            <span>ANGEL ASDRUBAL SANTAFÉ CÁRCAMO</span>
+        </div>
+        <button id="menu-button" aria-label="Toggle Navigation Menu"></button>
+        <nav id="primary-nav">
+            <ul>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Chamber Project</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>            
         </nav>
     </header>
     <main>
-        <h1>"HELLO, WELCOME TO MY FIRST PAGE AT WDD231 THIS BLOCK."</h1>
+        <h1>Home</h1>
+        <div class="student-info">
+            <section class="about-me card">
+                <h2>About Me</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum maxime architecto omnis? Assumenda dolorem quis quasi quisquam expedita ea perspiciatis, nemo doloribus odit ut facilis, omnis nobis vero iusto officia?
+                Quam laboriosam hic error numquam perspiciatis iure similique commodi aperiam cum deserunt, reiciendis in tenetur facilis asperiores placeat quibusdam esse neque at unde sint harum magni fuga molestias. Harum, sit!
+                Omnis quasi ut in sequi voluptas vel ratione repellendus consequatur odio quam molestias, nisi quo voluptatibus suscipit minus velit recusandae rerum cum placeat? Repudiandae doloribus nihil laborum illo enim nemo.
+                </p>
+            </section>
+            <section class="photo card">
+                <h2>Student Photo</h2>
+                <div class="photo-placeholder">
+                    <img src="images/profile.webp" alt="Angel Santafé Profile Picture" width="250" height="250" loading="lazy">
+                </div>
+            </section>
+        </div>
+        <section class="courses-interactive card">
+            <h2>Web Certificate Courses</h2>
+            <div class="filter-buttons">
+                <button id="all-btn" class="btn active">ALL</button>
+                <button id="cse-btn" class="btn">CSE</button>
+                <button id="wdd-btn" class="btn">WDD</button>
+            </div>
+            <div id="course-container" class="course-grid">
+                <!--Container dinamically filled with JS to display the courses.-->
+            </div>
+            <p id="credits-total" class="credits-info"></p>
+            <p id="credits-completed" class="credits-info"></p>
+        </section>
     </main>
     <footer>
-
+        <div class="social-media-links">
+            <a href="https://www.linkedin.com/in/angel-santafe-27b746205/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <img src="images/linkedIn.svg" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/angelsan20/" target="_blank" rel="noopener noreferrer" aria-label="Github">
+                <img src="images/github.svg" alt="Github">
+            </a>
+            <a href="https://www.instagram.com/angelsantafe20/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <img src="images/instagram.svg" alt="Instagram">
+            </a>
+        </div>
+        <p>&copy; <span id="currentyear"><!--Dinamically filled with JS.--></span> &bull; Angel Asdrubal Santafé Cárcamo &bull; Carabobo, Venezuela</p>
+        <p id="lastModified"><!--Dinamically filled with JS.--></p>
     </footer>
 </body>
 </html>
