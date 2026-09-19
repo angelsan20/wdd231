@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function displayMembers(members) {
         if (!membersContainer) return;
-        
         membersContainer.innerHTML = "";
         members.forEach(member => {
             const card = document.createElement("section");
@@ -35,20 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
             membersContainer.appendChild(card);
         });
     }
-
+    
     if (gridBtn && listBtn && membersContainer) {
         gridBtn.addEventListener("click", () => {
             membersContainer.className = "grid-view";
             gridBtn.classList.add("active");
             listBtn.classList.remove("active");
         });
-
         listBtn.addEventListener("click", () => {
             membersContainer.className = "list-view";
             listBtn.classList.add("active");
             gridBtn.classList.remove("active");
         });
     }
-
     fetchMembers();
 });

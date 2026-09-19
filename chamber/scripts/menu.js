@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
             primaryNav.classList.toggle("open");
             const isOpen = primaryNav.classList.contains("open");
             
-            // Actualiza el icono y la accesibilidad
             menuToggle.textContent = isOpen ? "✕" : "☰";
             menuToggle.setAttribute("aria-expanded", isOpen);
         });
