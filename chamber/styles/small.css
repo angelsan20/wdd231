@@ -46,7 +46,7 @@ header {
     flex-direction: column;
     width: 100%;
     position: relative;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px var(--footer-bg);
 }
 
 .header-brand {
@@ -90,7 +90,7 @@ header {
 
 #menu-toggle:hover,
 #menu-toggle:focus {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: var(--text-muted);
     outline: none;
 }
 
@@ -98,7 +98,7 @@ header {
     display: none;
     width: 100%;
     margin-top: 0.75rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--text-muted);
     padding-top: 0.5rem;
 }
 
@@ -136,7 +136,7 @@ header {
 #primary-nav a.active {
     color: var(--nav-active);
     font-weight: 700;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: var(--footer-bg);
 }
 
 .directory-container {
@@ -203,7 +203,7 @@ h1.page-title {
     border-radius: 10px;
     padding: 1.25rem;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 10px var(--footer-bg);
 }
 
 .grid-view .member-card img {
