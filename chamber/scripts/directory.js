@@ -2,13 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const membersContainer = document.getElementById("members-container");
     const gridBtn = document.getElementById("grid-view");
     const listBtn = document.getElementById("list-view");
-    const menuToggle = document.getElementById("menu-toggle");
-    const primaryNav = document.getElementById("primary-nav");
-
-
-    menuToggle.addEventListener("click", () => {
-        primaryNav.classList.toggle("open");
-    });
 
     async function fetchMembers() {
         try {
@@ -18,12 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
             displayMembers(data);
         } catch (error) {
             console.error("Error loading information:", error);
-            membersContainer.innerHTML = "<p>Error loading the member directory.</p>";
+            if (membersContainer) {
+                membersContainer.innerHTML = "<p>Error loading the member directory.</p>";
+            }
         }
     }
 
-    
     function displayMembers(members) {
+        if (!membersContainer) return;
+        
         membersContainer.innerHTML = "";
         members.forEach(member => {
             const card = document.createElement("section");
@@ -40,18 +36,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    
-    gridBtn.addEventListener("click", () => {
-        membersContainer.className = "grid-view";
-        gridBtn.classList.add("active");
-        listBtn.classList.remove("active");
-    });
+    if (gridBtn && listBtn && membersContainer) {
+        gridBtn.addEventListener("click", () => {
+            membersContainer.className = "grid-view";
+            gridBtn.classList.add("active");
+            listBtn.classList.remove("active");
+        });
 
-    listBtn.addEventListener("click", () => {
-        membersContainer.className = "list-view";
-        listBtn.classList.add("active");
-        gridBtn.classList.remove("active");
-    });
+        listBtn.addEventListener("click", () => {
+            membersContainer.className = "list-view";
+            listBtn.classList.add("active");
+            gridBtn.classList.remove("active");
+        });
+    }
 
     fetchMembers();
 });

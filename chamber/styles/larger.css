@@ -1,31 +1,97 @@
 @media (min-width: 768px) {
+
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    .header-brand {
+        width: auto;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
+    }
+
+    .header-logo img {
+        width: 55px;
+        height: 55px;
+    }
+
     #menu-toggle {
         display: none;
     }
 
-    nav {
-        display: block;
-        width: auto;
-    }
-
-    nav ul {
+    #primary-nav {
         display: flex;
-        gap: 1.5rem;
+        width: auto;
+        margin-top: 0;
+        border-top: none;
         padding-top: 0;
     }
 
-    .directory-header {
+    #primary-nav ul {
         flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    #primary-nav li {
+        width: auto;
+    }
+
+    #primary-nav a {
+        padding: 0.5rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    h1.page-title {
+        font-size: 2.2rem;
+        margin: 2rem 0 1.5rem 0;
+    }
+
+    .directory-header {
+        display: flex;
+        align-items: center;
         justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+
+    .directory-header h2 {
+        margin-bottom: 0;
     }
 
     .grid-view {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .list-view {
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     .list-view .member-card {
+        display: grid;
         grid-template-columns: 1.2fr 1.5fr 1fr 1.2fr;
+        align-items: center;
         gap: 1rem;
+        padding: 0.85rem 1.25rem;
+    }
+
+    .list-view .member-card h3 {
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    .list-view .member-card p {
+        font-size: 0.875rem;
+        margin: 0;
+    }
+
+    .list-view .member-card a {
+        font-size: 0.875rem;
     }
 
     footer {
@@ -33,5 +99,20 @@
         justify-content: space-between;
         align-items: center;
         text-align: left;
+        padding: 2rem;
+    }
+
+    .footer-info, 
+    .footer-social, 
+    .footer-dev {
+        flex: 1;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-dev {
+        text-align: right;
     }
 }

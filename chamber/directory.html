@@ -14,6 +14,11 @@
     <meta property="og:url" content="https://angelsan20.github.io/wdd231/chamber/directory.html">
     <meta property="og:description" content="Find businesses and merchants affiliated with our local chamber of commerce.">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+
     <!-- Styles and Favicon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/normalize.css">
@@ -21,17 +26,19 @@
     <link rel="stylesheet" href="styles/larger.css">
 
     <!-- Scripts -->
+    <script src="scripts/menu.js" defer></script>
     <script src="scripts/directory.js" defer></script>
     <script src="scripts/dates.js" defer></script>
-
 </head>
 <body>
     <header>
-        <div class="header-logo">
-            <img src="images/logo.webp" alt="Chamber of Commerce Logo">
-            <h1>Chamber of Commerce</h1>
+        <div class="header-brand">
+            <div class="header-logo">
+                <img src="images/logo.webp" alt="Chamber of Commerce Logo" width="50" height="50">
+                <span class="site-title">Naguanagua Chamber of Commerce</span>
+            </div>
+            <button id="menu-toggle" aria-label="Open the navigation menu" aria-expanded="false">☰</button>
         </div>
-        <button id="menu-toggle" aria-label="Open the navigation menu">☰</button>
         <nav id="primary-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -42,7 +49,8 @@
         </nav>
     </header>
 
-    <main>
+    <main class="directory-container">
+        <h1 class="page-title">Chamber of Commerce</h1>
         <section class="directory-header">
             <h2>Member Directory</h2>
             <div class="view-toggle">
@@ -63,9 +71,9 @@
             <p>contacto@camaravalencia.org | (0202) 999-9999</p>
         </div>
         <div class="footer-social">
-            <a href="#"><img src="images/youtube-icon.svg" alt="YouTube"></a>
-            <a href="#"><img src="images/twitter-icon.svg" alt="Twitter"></a>
-            <a href="#"><img src="images/linkedin-icon.svg" alt="LinkedIn"></a>
+            <a href="#"><img src="images/youtube-icon.svg" alt="YouTube" width="24" height="24"></a>
+            <a href="#"><img src="images/twitter-icon.svg" alt="Twitter" width="24" height="24"></a>
+            <a href="#"><img src="images/linkedin-icon.svg" alt="LinkedIn" width="24" height="24"></a>
         </div>
         <div class="footer-dev">
             <p>WDD231 Class Project | Angel Asdrubal Santafé Cárcamo</p>
