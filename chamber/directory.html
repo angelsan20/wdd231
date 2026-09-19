@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Business Directory of Naguanagua Chamber of Commerce Members: Here you'll find information about local businesses and can join a growing business community.">
+    <meta name="author" content="Angel Asdrubal Santafé Cárcamo">
+    <title>Directory - Naguanagua Chamber of Commerce</title>
+
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="Directory - Naguanagua Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://angelsan20.github.io/wdd231/chamber/images/logo.webp">
+    <meta property="og:url" content="https://angelsan20.github.io/wdd231/chamber/directory.html">
+    <meta property="og:description" content="Find businesses and merchants affiliated with our local chamber of commerce.">
+
+    <!-- Styles and Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- Scripts -->
+    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/dates.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="images/logo.webp" alt="Chamber of Commerce Logo">
+            <h1>Chamber of Commerce</h1>
+        </div>
+        <button id="menu-toggle" aria-label="Open the navigation menu">☰</button>
+        <nav id="primary-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="directory-header">
+            <h2>Member Directory</h2>
+            <div class="view-toggle">
+                <button id="grid-view" class="active">Grid View</button>
+                <button id="list-view">List View</button>
+            </div>
+        </section>
+
+        <div id="members-container" class="grid-view">
+            <!-- Dynamically loaded from JS -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p><strong>Chamber of Commerce</strong></p>
+            <p>Av. Bolívar Norte, Valencia, Venezuela</p>
+            <p>contacto@camaravalencia.org | (0202) 999-9999</p>
+        </div>
+        <div class="footer-social">
+            <a href="#"><img src="images/youtube-icon.svg" alt="YouTube"></a>
+            <a href="#"><img src="images/twitter-icon.svg" alt="Twitter"></a>
+            <a href="#"><img src="images/linkedin-icon.svg" alt="LinkedIn"></a>
+        </div>
+        <div class="footer-dev">
+            <p>WDD231 Class Project | Angel Asdrubal Santafé Cárcamo</p>
+            <p>&copy; <span id="current-year"></span> Chamber of Commerce</p>
+            <p id="last-modified"></p>
+        </div>
+    </footer>
+</body>
+</html>
