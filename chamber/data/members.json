@@ -6,7 +6,7 @@
       "phone": "(0241) 855-1234",
       "website": "https://comercialdelcentro.com",
       "image": "images/comercial.webp",
-      "membershipLevel": "Gold"
+      "membershipLevel": "gold"
     },
     {
       "name": "Turismo y Posadas Carabobo",
@@ -14,7 +14,7 @@
       "phone": "(0241) 867-8901",
       "website": "https://turismocarabobo.com",
       "image": "images/turismo.webp",
-      "membershipLevel": "Silver"
+      "membershipLevel": "silver"
     },
     {
       "name": "Soluciones Digitales Valencia",
@@ -22,7 +22,7 @@
       "phone": "(0241) 511-3322",
       "website": "https://solucionesvalencia.com",
       "image": "images/digital.webp",
-      "membershipLevel": "Bronze"
+      "membershipLevel": "bronze"
     },
     {
       "name": "Inversiones San José",
@@ -30,7 +30,7 @@
       "phone": "(0241) 822-4455",
       "website": "https://inversionessanjose.com",
       "image": "images/inversiones.webp",
-      "membershipLevel": "Silver"
+      "membershipLevel": "silver"
     },
     {
       "name": "Gastronomía Local C.A.",
@@ -38,7 +38,7 @@
       "phone": "(0241) 899-7766",
       "website": "https://gastronomialocal.com",
       "image": "images/gastronomia.webp",
-      "membershipLevel": "Gold"
+      "membershipLevel": "gold"
     },
     {
       "name": "Transporte y Logística Carabobo",
@@ -46,7 +46,7 @@
       "phone": "(0241) 700-1122",
       "website": "https://logisticacarabobo.com",
       "image": "images/logistica.webp",
-      "membershipLevel": "Bronze"
+      "membershipLevel": "bronze"
     },
     {
       "name": "Agencia de Viajes Naguanagua",
@@ -54,7 +54,7 @@
       "phone": "(0241) 888-3344",
       "website": "https://viajesnaguanagua.com",
       "image": "images/viajes.webp",
-      "membershipLevel": "Silver"
+      "membershipLevel": "silver"
     }
   ]
 }
