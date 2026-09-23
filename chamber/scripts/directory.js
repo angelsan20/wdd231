@@ -1,51 +1,40 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const membersContainer = document.getElementById("members-container");
-    const gridBtn = document.getElementById("grid-view");
-    const listBtn = document.getElementById("list-view");
+const membersUrl = 'data/members.json';
+const membersContainer = document.getElementById('members-container');
 
-    async function fetchMembers() {
-        try {
-            const response = await fetch("data/members.json");
-            if (!response.ok) throw new Error("Error retrieving members");
+async function getMembers() {
+    try {
+        const response = await fetch(membersUrl);
+        if (response.ok) {
             const data = await response.json();
-            displayMembers(data);
-        } catch (error) {
-            console.error("Error loading information:", error);
-            if (membersContainer) {
-                membersContainer.innerHTML = "<p>Error loading the member directory.</p>";
-            }
+            displayMembers(data.members);
+        } else {
+            throw Error(await response.text());
         }
+    } catch (error) {
+        console.error('Error loading directory members:', error);
+        membersContainer.innerHTML = '<p>Error loading directory entries.</p>';
     }
+}
 
-    function displayMembers(members) {
-        if (!membersContainer) return;
-        membersContainer.innerHTML = "";
-        members.forEach(member => {
-            const card = document.createElement("section");
-            card.className = "member-card";
+function displayMembers(members) {
+    membersContainer.innerHTML = '';
 
-            card.innerHTML = `
-                <img src="images/${member.image}" alt="Logo de ${member.name}" loading="lazy">
-                <h3 class="member-name">${member.name}</h3>
-                <p class="member-address">${member.address}</p>
-                <p class="member-phone">${member.phone}</p>
-                <p class="member-url"><a href="${member.website}" target="_blank" rel="noopener">${member.website}</a></p>
-            `;
-            membersContainer.appendChild(card);
-        });
-    }
-    
-    if (gridBtn && listBtn && membersContainer) {
-        gridBtn.addEventListener("click", () => {
-            membersContainer.className = "grid-view";
-            gridBtn.classList.add("active");
-            listBtn.classList.remove("active");
-        });
-        listBtn.addEventListener("click", () => {
-            membersContainer.className = "list-view";
-            listBtn.classList.add("active");
-            gridBtn.classList.remove("active");
-        });
-    }
-    fetchMembers();
-});
+    members.forEach(member => {
+        const card = document.createElement('section');
+        card.className = 'member-card';
+        const levelLower = member.membershipLevel.toLowerCase();
+
+        card.innerHTML = `
+            <img src="${member.image}" alt="${member.name} Logo" loading="lazy" width="100" height="70">
+            <h3>${member.name}</h3>
+            <p class="membership-tag ${levelLower}">${member.membershipLevel} Member</p>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <a href="${member.website}" target="_blank" rel="noopener">Website</a>
+        `;
+
+        membersContainer.appendChild(card);
+    });
+}
+
+getMembers();

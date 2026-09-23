@@ -1,5 +1,4 @@
 const membersUrl = 'data/members.json';
-
 const spotlightsGrid = document.getElementById('spotlights-grid');
 
 async function getSpotlightMembers() {
@@ -9,8 +8,8 @@ async function getSpotlightMembers() {
             const data = await response.json();
             
             const qualifiedMembers = data.members.filter(member => {
-                const level = member.membershipLevel ? member.membershipLevel.toLowerCase() : '';
-                return level === 'gold' || level === 'silver' || member.membershipLevel === 2 || member.membershipLevel === 3;
+                const level = member.membershipLevel.toLowerCase();
+                return level === 'gold' || level === 'silver';
             });
 
             const randomSpotlights = getRandomMembers(qualifiedMembers, 3);
@@ -25,7 +24,6 @@ async function getSpotlightMembers() {
     }
 }
 
-// No repetition function for members in the spolight list
 function getRandomMembers(membersArray, count) {
     const shuffled = [...membersArray].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
@@ -37,15 +35,15 @@ function displaySpotlights(spotlights) {
     spotlights.forEach(member => {
         const card = document.createElement('article');
         card.className = 'card spotlight-card';
-
-        let levelName = member.membershipLevel;
-        if (levelName === 3) levelName = 'Gold Member';
-        else if (levelName === 2) levelName = 'Silver Member';
+        const levelLower = member.membershipLevel.toLowerCase();
 
         card.innerHTML = `
             <div class="spotlight-header">
                 <h3>${member.name}</h3>
-                <span class="badge ${String(levelName).toLowerCase().includes('gold') ? 'gold' : 'silver'}">${levelName}</span>
+                <span class="badge ${levelLower}">
+                    <img src="images/${levelLower}-badge.png" alt="${member.membershipLevel} Icon" class="medal-icon" width="16" height="16">
+                    ${member.membershipLevel} Member
+                </span>
             </div>
             <img src="${member.image}" alt="${member.name} Logo" loading="lazy" width="120" height="80">
             <p class="spotlight-phone"><strong>Phone:</strong> ${member.phone}</p>

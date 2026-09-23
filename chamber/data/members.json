@@ -1,58 +1,60 @@
-[
-  {
-    "name": "Comercial del Centro C.A.",
-    "address": "Av. Bolívar Norte 102, Valencia",
-    "phone": "(0241) 855-1234",
-    "website": "https://comercialdelcentro.com",
-    "image": "comercial.webp",
-    "membershipLevel": 3
-  },
-  {
-    "name": "Turismo y Posadas Carabobo",
-    "address": "Calle Los Colegios 45, Naguanagua",
-    "phone": "(0241) 867-8901",
-    "website": "https://turismocarabobo.com",
-    "image": "turismo.webp",
-    "membershipLevel": 2
-  },
-  {
-    "name": "Soluciones Digitales Valencia",
-    "address": "CC Metrópolis, Nivel 2, Local 40",
-    "phone": "(0241) 511-3322",
-    "website": "https://solucionesvalencia.com",
-    "image": "digital.webp",
-    "membershipLevel": 1
-  },
-  {
-    "name": "Inversiones San José",
-    "address": "Av. Cedeño Edif. Torre Azul, Piso 4",
-    "phone": "(0241) 822-4455",
-    "website": "https://inversionessanjose.com",
-    "image": "inversiones.webp",
-    "membershipLevel": 2
-  },
-  {
-    "name": "Gastronomía Local C.A.",
-    "address": "Calle del Hambre, Mañongo",
-    "phone": "(0241) 899-7766",
-    "website": "https://gastronomialocal.com",
-    "image": "gastronomia.webp",
-    "membershipLevel": 3
-  },
-  {
-    "name": "Transporte y Logística Carabobo",
-    "address": "Zona Industrial Castillito, Galpón 12",
-    "phone": "(0241) 700-1122",
-    "website": "https://logisticacarabobo.com",
-    "image": "logistica.webp",
-    "membershipLevel": 1
-  },
-  {
-    "name": "Agencia de Viajes Naguanagua",
-    "address": "Av. Universidad, C.C. Cristal",
-    "phone": "(0241) 888-3344",
-    "website": "https://viajesnaguanagua.com",
-    "image": "viajes.webp",
-    "membershipLevel": 2
-  }
-]
+{
+  "members": [
+    {
+      "name": "Comercial del Centro C.A.",
+      "address": "Av. Bolívar Norte 102, Valencia",
+      "phone": "(0241) 855-1234",
+      "website": "https://comercialdelcentro.com",
+      "image": "images/comercial.webp",
+      "membershipLevel": "Gold"
+    },
+    {
+      "name": "Turismo y Posadas Carabobo",
+      "address": "Calle Los Colegios 45, Naguanagua",
+      "phone": "(0241) 867-8901",
+      "website": "https://turismocarabobo.com",
+      "image": "images/turismo.webp",
+      "membershipLevel": "Silver"
+    },
+    {
+      "name": "Soluciones Digitales Valencia",
+      "address": "CC Metrópolis, Nivel 2, Local 40",
+      "phone": "(0241) 511-3322",
+      "website": "https://solucionesvalencia.com",
+      "image": "images/digital.webp",
+      "membershipLevel": "Bronze"
+    },
+    {
+      "name": "Inversiones San José",
+      "address": "Av. Cedeño Edif. Torre Azul, Piso 4",
+      "phone": "(0241) 822-4455",
+      "website": "https://inversionessanjose.com",
+      "image": "images/inversiones.webp",
+      "membershipLevel": "Silver"
+    },
+    {
+      "name": "Gastronomía Local C.A.",
+      "address": "Calle del Hambre, Mañongo",
+      "phone": "(0241) 899-7766",
+      "website": "https://gastronomialocal.com",
+      "image": "images/gastronomia.webp",
+      "membershipLevel": "Gold"
+    },
+    {
+      "name": "Transporte y Logística Carabobo",
+      "address": "Zona Industrial Castillito, Galpón 12",
+      "phone": "(0241) 700-1122",
+      "website": "https://logisticacarabobo.com",
+      "image": "images/logistica.webp",
+      "membershipLevel": "Bronze"
+    },
+    {
+      "name": "Agencia de Viajes Naguanagua",
+      "address": "Av. Universidad, C.C. Cristal",
+      "phone": "(0241) 888-3344",
+      "website": "https://viajesnaguanagua.com",
+      "image": "images/viajes.webp",
+      "membershipLevel": "Silver"
+    }
+  ]
+}
