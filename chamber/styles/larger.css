@@ -116,3 +116,32 @@
         text-align: right;
     }
 }
+
+/* Home Layout */
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.spotlights-container {
+    grid-column: span 2;
+}
+
+#spotlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: auto;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    padding: 2rem;
+}
