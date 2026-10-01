@@ -143,7 +143,6 @@
         text-align: right;
     }
 
-    /* Home Layout (Correctamente dentro del media query) */
     .home-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
