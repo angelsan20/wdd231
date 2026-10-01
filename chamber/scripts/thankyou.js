@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsContainer = document.getElementById('results-container');
     const displayFirst = document.getElementById('display-first');
 
+    // Diccionario sincronizado con los atributos 'name' del formulario en join.html
     const labels = {
         first: 'First Name',
         last: 'Last Name',
