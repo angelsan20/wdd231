@@ -285,6 +285,27 @@ h1.page-title {
     word-break: break-all;
 }
 
+#members-container.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#members-container.list-view .member-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    width: 100%;
+}
+
+#members-container.list-view .member-card img {
+    width: 60px;
+    height: 50px;
+    display: block;
+}
+
 .membership-levels-container {
     display: flex;
     flex-direction: column;
@@ -316,7 +337,7 @@ h1.page-title {
     background-color: #93c5fd;
     border: 2px solid #3b82f6;
     border-radius: 12px;
-    padding: 2.5rem 1rem;
+    padding: 1.5rem;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -332,7 +353,7 @@ h1.page-title {
 
 .card-tier h4 {
     color: #1e293b;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin: 0;
     transition: color 0.3s ease;
 }
@@ -346,26 +367,6 @@ h1.page-title {
 
 .card-tier:hover h4 {
     color: #ffffff;
-}
-
-#members-container.list-view {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-#members-container.list-view .member-card {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    padding: 1rem 1.5rem;
-    width: 100%;
-}
-
-#members-container.list-view .member-card img {
-    width: 60px;
-    height: 50px;
 }
 
 .join-container {
@@ -436,53 +437,6 @@ h1.page-title {
 .join-form input[type="radio"] {
     margin: 0;
     flex-shrink: 0;
-}
-
-.membership-levels-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.membership-levels-container h2 {
-    color: #1e3a8a;
-    margin-bottom: 0.2rem;
-}
-
-.instruction-text {
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-bottom: 1rem;
-    font-style: italic;
-}
-
-.card-tier {
-    background-color: #93c5fd;
-    border: 2px solid #3b82f6;
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.card-tier h4 {
-    color: #1e293b;
-    font-size: 1.2rem;
-    margin: 0;
-    transition: color 0.3s ease;
-}
-
-.card-tier:hover {
-    background-color: #3b82f6;
-    border-color: #1d4ed8;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card-tier:hover h4 {
-    color: #ffffff;
 }
 
 .submit-btn {
@@ -603,9 +557,6 @@ footer {
     margin-bottom: 0.25rem;
 }
 
-/* ===============
-   (HOME / INDEX)
-   =============== */
 .home-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -613,7 +564,6 @@ footer {
     width: 100%;
 }
 
-/* Hero Section */
 .hero {
     position: relative;
     width: 100%;
@@ -667,7 +617,6 @@ footer {
     background-color: #004085;
 }
 
-/* Home Grid Layout */
 .home-grid {
     display: flex;
     flex-direction: column;
@@ -690,7 +639,6 @@ footer {
     margin-bottom: 1rem;
 }
 
-/* Events */
 .event-item {
     margin-bottom: 1rem;
     padding-bottom: 0.75rem;
@@ -706,10 +654,6 @@ footer {
     font-size: 1rem;
     color: var(--text-primary);
 }
-
-/* =======================
-   WEATHER CARD & TOGGLE
-   ======================= */
 
 .card-header {
     display: flex;
@@ -800,9 +744,6 @@ footer {
     border-bottom: none;
 }
 
-/* ===========
-   SPOTLIGHTS
-   =========== */
 .spotlights-container {
     width: 100%;
     max-width: 1200px;
