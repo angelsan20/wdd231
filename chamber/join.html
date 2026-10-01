@@ -58,17 +58,17 @@
                 <fieldset>
                     <legend>Application Form</legend>
                     
-                    <label>First Name<input type="text" name="first name" required autocomplete="given-name"></label>
+                    <label>First Name<input type="text" name="first name" required autocomplete="given-name" title="Please enter your first name"></label>
                     
-                    <label>Last Name<input type="text" name="last name" required autocomplete="family-name"></label>
+                    <label>Last Name<input type="text" name="last name" required autocomplete="family-name" title="Please enter your last name"></label>
                     
                     <label>Organizational Title <input type="text" name="title" autocomplete="organization-title" pattern="[a-zA-Z\s\-]{7,}" title="Minimum 7 characters, letters, spaces and hyphens only"></label>
                     
-                    <label>Email Address<input type="email" name="Email" required autocomplete="Email" placeholder="john89@gmail.com"></label>
+                    <label>Email Address<input type="email" name="Email" required autocomplete="Email" placeholder="john89@gmail.com" title="Please enter a valid email address"></label>
                     
-                    <label>Mobile Phone<input type="tel" name="Mobile Phone" required autocomplete="Mobile Phone" placeholder="987-555-1234"></label>
+                    <label>Mobile Phone<input type="tel" name="Mobile Phone" required autocomplete="tel" placeholder="987-555-1234" title="Please enter a valid phone number"></label>
                     
-                    <label>Business/Organization Name<input type="text" name="organization" required autocomplete="organization"></label>
+                    <label>Business/Organization Name<input type="text" name="organization" required autocomplete="organization" title="Please enter your business or organization name"></label>
                 </fieldset>
     
                 <fieldset>
@@ -93,9 +93,9 @@
                 </fieldset>
     
                 <fieldset>
-                    <legend>Organization description</legend>
-                    <label>Organization description
-                        <textarea name="description" rows="3" placeholder="Briefly describe your business or organization..."></textarea>
+                    <legend>Additional Description</legend>
+                    <label>Business or Organization description:
+                        <textarea name="description" rows="3" placeholder="Briefly describe your business or organization..." title="Please provide a description of your organization"></textarea>
                     </label>
                 </fieldset>
     
