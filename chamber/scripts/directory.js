@@ -1,6 +1,10 @@
 const membersUrl = 'data/members.json';
 const membersContainer = document.getElementById('members-container');
 
+// Selectores para los botones de vista
+const gridbutton = document.querySelector("#grid-view");
+const listbutton = document.querySelector("#list-view");
+
 async function getMembers() {
     try {
         const response = await fetch(membersUrl);
@@ -34,6 +38,21 @@ function displayMembers(members) {
         `;
 
         membersContainer.appendChild(card);
+    });
+}
+
+// Lógica para alternar entre Grid View y List View y sus clases activas
+if (gridbutton && listbutton && membersContainer) {
+    gridbutton.addEventListener("click", () => {
+        membersContainer.classList.remove("list-view");
+        gridbutton.classList.add("active");
+        listbutton.classList.remove("active");
+    });
+
+    listbutton.addEventListener("click", () => {
+        membersContainer.classList.add("list-view");
+        listbutton.classList.add("active");
+        gridbutton.classList.remove("active");
     });
 }
 

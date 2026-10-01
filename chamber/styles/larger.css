@@ -94,6 +94,33 @@
         font-size: 0.875rem;
     }
 
+    #members-container:not(.list-view) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .join-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 2.5rem;
+    }
+
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    .card-tier {
+        width: 90%;
+        min-height: 260px;
+        margin: 0 auto;
+    }
+
     footer {
         flex-direction: row;
         justify-content: space-between;
