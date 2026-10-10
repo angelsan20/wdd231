@@ -143,6 +143,7 @@
         text-align: right;
     }
 
+    /* Home Layout */
     .home-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -169,5 +170,16 @@
         max-width: 500px;
         border-radius: 8px;
         padding: 2rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .discover-grid figure img {
+        transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .discover-grid figure img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.08) contrast(1.05);
     }
 }
