@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Tools Hub - Site Plan</title>
+    <meta name="description" content="Documento de planificación y arquitectura del proyecto Life Tools Hub para el curso WDD231.">
+    <meta name="author" content="Angel Santafé Palma">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Supporting CSS -->
+    <link rel="stylesheet" href="styles/site-plan.css">
+</head>
+<body>
+    <header>
+        <h1>Life Tools Hub - Site Plan</h1>
+        <p>Proyecto Final WDD231 | Desarrollado por Angel Santafé Palma</p>
+    </header>
+
+    <main>
+        <!-- 1. Site Name -->
+        <section class="plan-section">
+            <h2>1. Site Name</h2>
+            <p><strong>Nombre del sitio:</strong> Life Tools Hub</p>
+            <p><strong>Razón de selección:</strong> Este nombre representa una caja de herramientas digital multipropósito centralizada para estudiantes, desarrolladores y profesionales que necesitan organizar, gestionar y consultar recursos, enlaces y herramientas de utilidad diaria de forma eficiente.</p>
+            <p><strong>Dominio disponible opcional:</strong> <code>lifetoolshub.org</code></p>
+        </section>
+
+        <!-- 2. Site Purpose -->
+        <section class="plan-section">
+            <h2>2. Site Purpose</h2>
+            <p>El sitio web funciona como un centro de recursos y directorio interactivo ordenado por categorías prácticas (programación, desarrollo web, cocina, fitness y entretenimiento). Ofrece tarjetas informativas con vistas previas, un sistema local de favoritos mediante almacenamiento web y herramientas de importación/exportación de respaldos personalizados mediante archivos JSON.</p>
+        </section>
+
+        <!-- 3. Scenarios -->
+        <section class="plan-section">
+            <h2>3. Target Audience Scenarios</h2>
+            <p>Preguntas clave que los usuarios se harán al visitar la plataforma:</p>
+            <ul>
+                <li>¿Cómo puedo guardar mis herramientas y enlaces favoritos sin perderlos al cambiar de computadora o limpiar el navegador?</li>
+                <li>¿Puedo agregar una nueva categoría personalizada y mis propias páginas sin alterar el contenido base del sitio?</li>
+                <li>¿Cómo puedo buscar rápidamente un recurso técnico específico o una guía dentro de las categorías disponibles?</li>
+            </ul>
+        </section>
+
+        <!-- 4. Color Scheme -->
+        <section class="plan-section">
+            <h2>4. Color Scheme</h2>
+            <p>Inspirado en una estética de caja de herramientas industrial moderna y limpia, utilizando tonos neutros claros para evitar la fatiga visual y un acento amarillo brillante para llamadas a la acción.</p>
+            <div class="color-palette">
+                <div class="color-box bg-primary">
+                    <span>Fondo General (#F9F9FB)</span>
+                </div>
+                <div class="color-box bg-card">
+                    <span>Contenedores / Tarjetas (#FFFFFF)</span>
+                </div>
+                <div class="color-box text-main">
+                    <span>Texto Principal (#1E293B)</span>
+                </div>
+                <div class="color-box accent-yellow">
+                    <span>Acento Industrial (#F59E0B)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Typography -->
+        <section class="plan-section">
+            <h2>5. Typography</h2>
+            <p>Se utilizará una única tipografía moderna, limpia y altamente legible de Google Fonts.</p>
+            <ul>
+                <li><strong>Tipografía Principal:</strong> <em>Inter</em> (Sans-serif)</li>
+                <li><strong>Encabezados (H1, H2, H3):</strong> Inter Bold (700) o Semi-bold (600). Aplicada para dar jerarquía visual clara.</li>
+                <li><strong>Cuerpo de texto y párrafos:</strong> Inter Regular (400). Aplicada para asegurar una lectura fluida en dispositivos móviles y de escritorio.</li>
+            </ul>
+        </section>
+
+        <!-- 6. Wireframes -->
+        <section class="plan-section">
+            <h2>6. Wireframes</h2>
+            <p>Bocetos estructurales en blanco y negro para la vista de la página principal (Home) en dispositivos móviles y pantallas grandes.</p>
+            
+            <div class="wireframe-container">
+                <div class="wireframe-box">
+                    <h3>Mobile View (Small Screen)</h3>
+                    <!-- Reemplaza el src con la ruta de tu dibujo a mano escaneado -->
+                    <img src="images/wireframe-mobile.png" alt="Wireframe de la vista móvil" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="fallback-sketch" style="display:none;">[ Inserta aquí la imagen de tu boceto móvil escaneado: images/wireframe-mobile.png ]</div>
+                </div>
+
+                <div class="wireframe-box">
+                    <h3>Desktop View (Large Screen)</h3>
+                    <!-- Reemplaza el src con la ruta de tu dibujo a mano escaneado -->
+                    <img src="images/wireframe-desktop.png" alt="Wireframe de la vista de escritorio" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="fallback-sketch" style="display:none;">[ Inserta aquí la imagen de tu boceto de escritorio escaneado: images/wireframe-desktop.png ]</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 | Life Tools Hub - Angel Santafé Palma | WDD231</p>
+    </footer>
+</body>
+</html>
