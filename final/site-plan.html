@@ -1,106 +1,100 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Tools Hub - Site Plan</title>
-    <meta name="description" content="Documento de planificación y arquitectura del proyecto Life Tools Hub para el curso WDD231.">
-    <meta name="author" content="Angel Santafé Palma">
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Supporting CSS -->
+    <title>Site Plan | Life Tools Hub</title>
+
     <link rel="stylesheet" href="styles/site-plan.css">
 </head>
+
 <body>
-    <header>
-        <h1>Life Tools Hub - Site Plan</h1>
-        <p>Proyecto Final WDD231 | Desarrollado por Angel Santafé Palma</p>
-    </header>
+    
+    <div class="container">
+        
+        <span class="highlight-badge">PROJECT DOCUMENTATION</span>
+        
+        <h1>Site Plan: Life Tools Hub</h1>
+        
+        <h2>1. Site Name & Purpose</h2>
+        
+        <p><strong>Site Name:</strong> Life Tools Hub</p>
+        
+        <p><strong>Site Purpose:</strong> Life Tools Hub serves as a unified, high-performance digital command center
+            designed to aggregate, organize, and manage curated web resources across programming, fitness, cooking, and
+            gaming. Built with offline-first local storage capabilities and custom backup management, it enables users
+            to seamlessly access, filter, and extend their essential daily web applications without server overhead.</p>
 
-    <main>
-        <!-- 1. Site Name -->
-        <section class="plan-section">
-            <h2>1. Site Name</h2>
-            <p><strong>Nombre del sitio:</strong> Life Tools Hub</p>
-            <p><strong>Razón de selección:</strong> Este nombre representa una caja de herramientas digital multipropósito centralizada para estudiantes, desarrolladores y profesionales que necesitan organizar, gestionar y consultar recursos, enlaces y herramientas de utilidad diaria de forma eficiente.</p>
-            <p><strong>Dominio disponible opcional:</strong> <code>lifetoolshub.org</code></p>
-        </section>
+        <h2>2. Target Audience & Scenarios</h2>
+        
+        <p><strong>Target Audience:</strong> Software developers, programmers, gamers, students, and digital enthusiasts
+            who require a fast, clean, and customizable portal to organize their daily tools with zero visual clutter.
+        </p>
 
-        <!-- 2. Site Purpose -->
-        <section class="plan-section">
-            <h2>2. Site Purpose</h2>
-            <p>El sitio web funciona como un centro de recursos y directorio interactivo ordenado por categorías prácticas (programación, desarrollo web, cocina, fitness y entretenimiento). Ofrece tarjetas informativas con vistas previas, un sistema local de favoritos mediante almacenamiento web y herramientas de importación/exportación de respaldos personalizados mediante archivos JSON.</p>
-        </section>
+        <h2>3. Color Palette</h2>
+        
+        <p>Designed specifically to minimize eye fatigue during extended screen sessions through high-contrast,
+            developer-friendly slate and off-white tones paired with vibrant yellow accents.</p>
 
-        <!-- 3. Scenarios -->
-        <section class="plan-section">
-            <h2>3. Target Audience Scenarios</h2>
-            <p>Preguntas clave que los usuarios se harán al visitar la plataforma:</p>
-            <ul>
-                <li>¿Cómo puedo guardar mis herramientas y enlaces favoritos sin perderlos al cambiar de computadora o limpiar el navegador?</li>
-                <li>¿Puedo agregar una nueva categoría personalizada y mis propias páginas sin alterar el contenido base del sitio?</li>
-                <li>¿Cómo puedo buscar rápidamente un recurso técnico específico o una guía dentro de las categorías disponibles?</li>
-            </ul>
-        </section>
+        <div class="color-palette">
+            <div class="color-swatch swatch-primary">Light Background<br>#F1F5F9</div>
+            <div class="color-swatch swatch-card">Card Surface<br>#FFFFFF</div>
+            <div class="color-swatch swatch-accent">Accent Yellow<br>#F59E0B</div>
+            <div class="color-swatch swatch-dark">Dark Theme Primary<br>#0F172A</div>
+        </div>
 
-        <!-- 4. Color Scheme -->
-        <section class="plan-section">
-            <h2>4. Color Scheme</h2>
-            <p>Inspirado en una estética de caja de herramientas industrial moderna y limpia, utilizando tonos neutros claros para evitar la fatiga visual y un acento amarillo brillante para llamadas a la acción.</p>
-            <div class="color-palette">
-                <div class="color-box bg-primary">
-                    <span>Fondo General (#F9F9FB)</span>
-                </div>
-                <div class="color-box bg-card">
-                    <span>Contenedores / Tarjetas (#FFFFFF)</span>
-                </div>
-                <div class="color-box text-main">
-                    <span>Texto Principal (#1E293B)</span>
-                </div>
-                <div class="color-box accent-yellow">
-                    <span>Acento Industrial (#F59E0B)</span>
-                </div>
-            </div>
-        </section>
+        <h2>4. Typography</h2>
+        <ul>
+            <li><strong>Primary Typography:</strong> System UI Font Stack (<code>'Inter'</code>, <code>system-ui</code>,
+                sans-serif) for high legibility, clean layout structure, and instant cross-platform loading.</li>
+            <li><strong>Headings:</strong> Bold sans-serif styling with strict structural hierarchy (H1, H2, H3).</li>
+        </ul>
 
-        <!-- 5. Typography -->
-        <section class="plan-section">
-            <h2>5. Typography</h2>
-            <p>Se utilizará una única tipografía moderna, limpia y altamente legible de Google Fonts.</p>
-            <ul>
-                <li><strong>Tipografía Principal:</strong> <em>Inter</em> (Sans-serif)</li>
-                <li><strong>Encabezados (H1, H2, H3):</strong> Inter Bold (700) o Semi-bold (600). Aplicada para dar jerarquía visual clara.</li>
-                <li><strong>Cuerpo de texto y párrafos:</strong> Inter Regular (400). Aplicada para asegurar una lectura fluida en dispositivos móviles y de escritorio.</li>
-            </ul>
-        </section>
+        <h2>5. Site Architecture (Sitemap)</h2>
 
-        <!-- 6. Wireframes -->
-        <section class="plan-section">
-            <h2>6. Wireframes</h2>
-            <p>Bocetos estructurales en blanco y negro para la vista de la página principal (Home) en dispositivos móviles y pantallas grandes.</p>
+        <nav class="sitemap-nav-bar">
+            <a href="index.html" class="sitemap-btn">Home</a>
+            <a href="resources.html" class="sitemap-btn">Resources</a>
+            <a href="import-export.html" class="sitemap-btn">Import / Export</a>
+            <a href="contact.html" class="sitemap-btn">Contact Us</a>
+        </nav>
+
+        <ul>
+            <li><strong>Home (<code>index.html</code>):</strong> Features value proposition, interactive features
+                showcase, responsive mobile navigation, and theme toggling.</li>
+            <li><strong>Resources Directory (<code>resources.html</code>):</strong> Displays dynamic categorizations,
+                favorite management, interactive Open Graph resource cards, and tool/category creation modals.</li>
+            <li><strong>Import / Export Suite (<code>import-export.html</code>):</strong> Interactive category checklist
+                filters, JSON backup generator, and seamless local data sync.</li>
+            <li><strong>Contact Us (<code>contact.html</code>):</strong> Clean feedback form interface for user
+                inquiries and feature requests.</li>
+        </ul>
+
+        <h2>6. Wireframes</h2>
+        
+        <p>Hand-drawn wireframe sketches (created using the program PAINT, native in all the Microsoft OS.) 
+            illustrating the responsive layout structure for small (mobile) and larger (desktop) screen viewports.</p>
+
+        <div class="wireframe-container">
             
-            <div class="wireframe-container">
-                <div class="wireframe-box">
-                    <h3>Mobile View (Small Screen)</h3>
-                    <!-- Reemplaza el src con la ruta de tu dibujo a mano escaneado -->
-                    <img src="images/wireframe-mobile.png" alt="Wireframe de la vista móvil" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="fallback-sketch" style="display:none;">[ Inserta aquí la imagen de tu boceto móvil escaneado: images/wireframe-mobile.png ]</div>
-                </div>
-
-                <div class="wireframe-box">
-                    <h3>Desktop View (Large Screen)</h3>
-                    <!-- Reemplaza el src con la ruta de tu dibujo a mano escaneado -->
-                    <img src="images/wireframe-desktop.png" alt="Wireframe de la vista de escritorio" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="fallback-sketch" style="display:none;">[ Inserta aquí la imagen de tu boceto de escritorio escaneado: images/wireframe-desktop.png ]</div>
-                </div>
+            <h3>Small Viewport Wireframe (Mobile)</h3>
+            
+            <div class="wireframe-placeholder">
+                <img src="images/small_views_wireframe.png" alt="Hand-drawn Small Viewport Wireframe"
+                    class="wireframe-img">
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2026 | Life Tools Hub - Angel Santafé Palma | WDD231</p>
-    </footer>
+            <h3>Larger Viewport Wireframe (Desktop)</h3>
+            
+            <div class="wireframe-placeholder">
+                <img src="images/larger_views_wireframe.png" alt="Hand-drawn Larger Viewport Wireframe"
+                    class="wireframe-img">
+            </div>
+        
+        </div>
+    
+    </div>
+
 </body>
+
 </html>
