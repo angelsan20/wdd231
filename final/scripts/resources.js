@@ -1,5 +1,3 @@
-// scripts/resources.js - Dynamic Resource Directory with Category Movement, Editing & Custom Modals
-
 document.addEventListener('DOMContentLoaded', () => {
 
     async function getStoredData() {
@@ -108,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const isDefaultCategory = ['programming', 'fitness', 'cooking', 'entertainment'].includes(category.id);
             
-            // Opciones del menú de tres puntos para la categoría (incluyendo mover posición y editar/eliminar)
             let menuItemsHTML = `
                 <button class="dropdown-item-btn add-tool-btn" data-cat="${category.id}">+ New Page</button>
                 <button class="dropdown-item-btn hide-cat-btn" data-cat="${category.id}">Hide</button>
@@ -274,7 +271,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.category-dropdown-menu').forEach(m => m.classList.remove('show'));
         });
 
-        // Modal para Mover Posición de Categoría
         document.querySelectorAll('.move-cat-pos-btn').forEach(btn => {
             btn.addEventListener('click', async () => {
                 const catId = btn.dataset.cat;
@@ -314,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('confirm-move-cat-pos').onclick = async () => {
                         const newIndex = parseInt(document.getElementById('target-pos-select').value);
                         if (newIndex !== catIndex) {
-                            // Reordenar array en localStorage
+                    
                             data.splice(catIndex, 1);
                             data.splice(newIndex, 0, category);
                             saveStoredData(data);
@@ -326,7 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Modal para editar nombre de categoría custom
         document.querySelectorAll('.edit-cat-btn').forEach(btn => {
             btn.addEventListener('click', async () => {
                 const catId = btn.dataset.cat;
@@ -368,7 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Modal para eliminar categoría custom
         document.querySelectorAll('.delete-cat-btn').forEach(btn => {
             btn.addEventListener('click', async () => {
                 const catId = btn.dataset.cat;
@@ -455,7 +449,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // MODAL DETALLADO DE TARJETAS
         document.querySelectorAll('.resource-og-card').forEach(card => {
             card.addEventListener('click', async (e) => {
                 if (e.target.tagName === 'A' || e.target.closest('button')) return;

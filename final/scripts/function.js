@@ -1,6 +1,3 @@
-// ===============
-// 1. Function
-// ===============
 document.addEventListener('DOMContentLoaded', () => {
     const STORAGE_KEY = 'lifeToolsData';
     
@@ -14,10 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-// ==============
-// 2. menu
-// ==============
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mainNav = document.getElementById('main-nav');
@@ -31,10 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-// ==============
-// 3. dates
-// ==============
 document.addEventListener('DOMContentLoaded', () => {
     const yearEl = document.getElementById('current-year');
     const modifiedEl = document.getElementById('last-modified');
@@ -43,10 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modifiedEl) modifiedEl.textContent = `Last Update: ${document.lastModified}`;
 });
 
-
-// ============
-// 4. theme
-// ============
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     if (!themeToggleBtn) return;
@@ -70,10 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 });
-
-// ==============
-// 5. lazyoad
-// ==============
 
 document.addEventListener('DOMContentLoaded', () => {
     const lazyElements = document.querySelectorAll('.lazy-bg');

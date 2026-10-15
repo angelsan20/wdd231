@@ -1,4 +1,3 @@
-// scripts/import-export.js - JSON Backup, Export & Import Management
 document.addEventListener('DOMContentLoaded', () => {
     const checklistContainer = document.getElementById('export-checklist-container');
     const exportBtn = document.getElementById('export-json-btn');
@@ -6,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('resource-modal');
     const modalBody = document.getElementById('modal-body');
 
-    // Función robusta con detección de ruta para GitHub Pages
+    
     async function getStoredData() {
         try {
             const storedLocal = localStorage.getItem('lifeToolsData');
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return JSON.parse(storedLocal);
             }
 
-            // Si no hay datos en localStorage, los carga automáticamente del JSON oficial
             const basePath = window.location.hostname.includes('github.io') 
                 ? './data/resources.json' 
                 : 'data/resources.json';
@@ -37,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('lifeToolsData', JSON.stringify(data));
     }
 
-    // Render Checklist modificado a async para esperar los datos
     async function renderChecklist() {
         if (!checklistContainer) return;
         const data = await getStoredData();
@@ -83,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Export Selected Data to Custom JSON File
+    
     if (exportBtn) {
         exportBtn.addEventListener('click', async () => {
             const data = await getStoredData();
@@ -134,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Import / Load JSON Backup File
     if (importFileInput) {
         importFileInput.addEventListener('change', (e) => {
             const file = e.target.files[0];
