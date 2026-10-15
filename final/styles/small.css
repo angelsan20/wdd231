@@ -861,6 +861,10 @@ body.dark-theme .cta-container.lazy-bg {
     gap: 10px;
 }
 
+#import-file-input {
+    display: none;
+}
+
 .checklist-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
