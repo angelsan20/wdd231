@@ -1,28 +1,49 @@
-// scripts/import-export.js - JSON Backup, Export & Import Management with Custom Modal Feedback
-
+// scripts/import-export.js - JSON Backup, Export & Import Management
 document.addEventListener('DOMContentLoaded', () => {
     const checklistContainer = document.getElementById('export-checklist-container');
     const exportBtn = document.getElementById('export-json-btn');
     const importFileInput = document.getElementById('import-file-input');
-    const modal = document.getElementById('resource-modal'); // Usando el modal global de la aplicación
+    const modal = document.getElementById('resource-modal');
     const modalBody = document.getElementById('modal-body');
 
-    function getStoredData() {
-        const stored = localStorage.getItem('lifeToolsData');
-        return stored ? JSON.parse(stored) : [];
+    // Función robusta con detección de ruta para GitHub Pages
+    async function getStoredData() {
+        try {
+            const storedLocal = localStorage.getItem('lifeToolsData');
+            if (storedLocal) {
+                return JSON.parse(storedLocal);
+            }
+
+            // Si no hay datos en localStorage, los carga automáticamente del JSON oficial
+            const basePath = window.location.hostname.includes('github.io') 
+                ? './data/resources.json' 
+                : 'data/resources.json';
+
+            const response = await fetch(basePath, { cache: 'no-store' });
+            if (!response.ok) throw new Error('Failed to load official resources.json');
+            const officialData = await response.json();
+
+            localStorage.setItem('lifeToolsData', JSON.stringify(officialData));
+            return officialData;
+
+        } catch (error) {
+            console.error('Error fetching resources.json for export:', error);
+            const stored = localStorage.getItem('lifeToolsData');
+            return stored ? JSON.parse(stored) : [];
+        }
     }
 
     function saveStoredData(data) {
         localStorage.setItem('lifeToolsData', JSON.stringify(data));
     }
 
-    // Render Checklist for Selective Export with category-level toggle buttons and clean tool names
-    function renderChecklist() {
+    // Render Checklist modificado a async para esperar los datos
+    async function renderChecklist() {
         if (!checklistContainer) return;
-        const data = getStoredData();
+        const data = await getStoredData();
         checklistContainer.innerHTML = '';
 
-        if (data.length === 0) {
+        if (!Array.isArray(data) || data.length === 0) {
             checklistContainer.innerHTML = '<p>No data available to export.</p>';
             return;
         }
@@ -64,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Export Selected Data to Custom JSON File
     if (exportBtn) {
-        exportBtn.addEventListener('click', () => {
-            const data = getStoredData();
+        exportBtn.addEventListener('click', async () => {
+            const data = await getStoredData();
             const checkboxes = document.querySelectorAll('.tool-checkbox:checked');
             
             if (checkboxes.length === 0) {
@@ -113,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Import / Load JSON Backup File (Sin alertas nativas, con diseño estructurado modal)
+    // Import / Load JSON Backup File
     if (importFileInput) {
         importFileInput.addEventListener('change', (e) => {
             const file = e.target.files[0];
@@ -155,7 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     console.error(error);
                 }
-                // Limpiar input para permitir reimportar el mismo archivo si es necesario
                 importFileInput.value = '';
             };
             reader.readAsText(file);

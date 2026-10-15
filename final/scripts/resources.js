@@ -4,7 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function getStoredData() {
         try {
-            const response = await fetch('./data/resources.json', { cache: 'no-store' });
+            const basePath = window.location.hostname.includes('github.io') 
+                ? './data/resources.json' 
+                : 'data/resources.json';
+
+            const response = await fetch(basePath, { cache: 'no-store' });
             if (!response.ok) throw new Error('Failed to load official resources.json');
             const officialData = await response.json();
 

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="styles/larger.css">
     
     <script type="module" src="scripts/function.js"></script>
+    <script type="module" src="scripts/thanks.js"></script>
     
 </head>
 <body>
@@ -60,36 +61,32 @@
 
         <section class="contact-form-container">
         
-            <form action="https://formsubmit.co/f1d9acb3f91f2ae4043567e65d7062b4" method="POST" class="feedback-form">
-                
-                <input type="hidden" name="_next" value="https://angelsan20.github.io/wdd231/final/thanks.html">
-                <input type="hidden" name="_captcha" value="false">
-
+            <form action="thanks.html" method="GET" class="feedback-form">
                 <div class="form-group">
-                    <label for="full-name">Full Name *</label>
-                    <input type="text" id="full-name" name="fullName" required placeholder="John Doe">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
                 </div>
-
+            
                 <div class="form-group">
                     <label for="email">Email Address *</label>
                     <input type="email" id="email" name="email" required placeholder="john@example.com">
                 </div>
-
+            
                 <div class="form-group">
                     <label for="topic">Subject Topic</label>
                     <select id="topic" name="topic">
-                        <option value="suggestion">Tool / Category Suggestion</option>
-                        <option value="bug">Report Link Issue or Bug</option>
-                        <option value="general">General Inquiry</option>
+                        <option value="Tool / Category Suggestion">Tool / Category Suggestion</option>
+                        <option value="Report Link Issue or Bug">Report Link Issue or Bug</option>
+                        <option value="General Inquiry">General Inquiry</option>
                     </select>
                 </div>
-
+            
                 <div class="form-group">
                     <label for="message">Message / Feedback *</label>
                     <textarea id="message" name="message" rows="5" required placeholder="Share your thoughts or recommendations..."></textarea>
                 </div>
-
-                <button type="submit" class="btn btn-primary">Submit Feedback</button>
+            
+                <button type="submit" class="btn btn-primary">Review & Confirm</button>
             </form>
         </section>
     </main>
