@@ -85,21 +85,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!themeToggleBtn) return;
 
     const currentTheme = localStorage.getItem('theme');
-    const themeIcon = themeToggleBtn.querySelector('.theme-icon') || themeToggleBtn;
+
+    themeToggleBtn.innerHTML = '<span class="theme-icon"></span> <span class="theme-text"></span>';
+    const themeIcon = themeToggleBtn.querySelector('.theme-icon');
+    const themeText = themeToggleBtn.querySelector('.theme-text');
 
     if (currentTheme === 'dark') {
         document.body.classList.add('dark-theme');
-        if (themeIcon) themeIcon.textContent = '☀️ Light';
+        if (themeIcon) themeIcon.textContent = '☀️';
+        if (themeText) themeText.textContent = ' Light';
     } else {
         document.body.classList.remove('dark-theme');
-        if (themeIcon) themeIcon.textContent = '🌙 Dark';
+        if (themeIcon) themeIcon.textContent = '🌙';
+        if (themeText) themeText.textContent = ' Dark';
     }
 
     themeToggleBtn.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
         const isDark = document.body.classList.contains('dark-theme');
         
-        if (themeIcon) themeIcon.textContent = isDark ? '☀️ Light' : '🌙 Dark';
+        if (themeIcon) themeIcon.textContent = isDark ? '☀️' : '🌙';
+        if (themeText) themeText.textContent = isDark ? ' Light' : ' Dark';
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 });

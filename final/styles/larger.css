@@ -14,7 +14,7 @@
 
     
     .nav-list {
-        display: flex !important;
+        display: flex;
         flex-direction: row;
         gap: 30px;
         border-top: 1px solid var(--border-color);
@@ -28,6 +28,17 @@
 
     .checklist-tools {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .logo {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 10px;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
     }
 }
 
