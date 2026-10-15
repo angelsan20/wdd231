@@ -5,30 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('resource-modal');
     const modalBody = document.getElementById('modal-body');
 
-    
     async function getStoredData() {
-        try {
-            const storedLocal = localStorage.getItem('lifeToolsData');
-            if (storedLocal) {
-                return JSON.parse(storedLocal);
-            }
-
-            const basePath = window.location.hostname.includes('github.io') 
-                ? './data/resources.json' 
-                : 'data/resources.json';
-
-            const response = await fetch(basePath, { cache: 'no-store' });
-            if (!response.ok) throw new Error('Failed to load official resources.json');
-            const officialData = await response.json();
-
-            localStorage.setItem('lifeToolsData', JSON.stringify(officialData));
-            return officialData;
-
-        } catch (error) {
-            console.error('Error fetching resources.json for export:', error);
-            const stored = localStorage.getItem('lifeToolsData');
-            return stored ? JSON.parse(stored) : [];
+        if (typeof window.getStoredData === 'function') {
+            return await window.getStoredData();
         }
+        const stored = localStorage.getItem('lifeToolsData');
+        return stored ? JSON.parse(stored) : [];
     }
 
     function saveStoredData(data) {
@@ -80,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
     if (exportBtn) {
         exportBtn.addEventListener('click', async () => {
             const data = await getStoredData();

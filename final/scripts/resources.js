@@ -1,53 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     async function getStoredData() {
-        try {
-            const basePath = window.location.hostname.includes('github.io') 
-                ? './data/resources.json' 
-                : 'data/resources.json';
-
-            const response = await fetch(basePath, { cache: 'no-store' });
-            if (!response.ok) throw new Error('Failed to load official resources.json');
-            const officialData = await response.json();
-
-            const storedLocal = localStorage.getItem('lifeToolsData');
-            
-            if (!storedLocal) {
-                localStorage.setItem('lifeToolsData', JSON.stringify(officialData));
-                return officialData;
-            }
-
-            const localData = JSON.parse(storedLocal);
-
-            officialData.forEach(officialCat => {
-                let localCat = localData.find(c => c.id === officialCat.id);
-
-                if (!localCat) {
-                    localData.push(officialCat);
-                } else {
-                    officialCat.tools.forEach(officialTool => {
-                        let localTool = localCat.tools.find(t => t.id === officialTool.id);
-
-                        if (!localTool) {
-                            localCat.tools.push(officialTool);
-                        } else {
-                            localTool.name = officialTool.name;
-                            localTool.url = officialTool.url;
-                            localTool.desc = officialTool.desc;
-                            localTool.logo = officialTool.logo;
-                        }
-                    });
-                }
-            });
-
-            localStorage.setItem('lifeToolsData', JSON.stringify(localData));
-            return localData;
-
-        } catch (error) {
-            console.error('Error fetching resources.json, falling back to local storage:', error);
-            const stored = localStorage.getItem('lifeToolsData');
-            return stored ? JSON.parse(stored) : [];
+        if (typeof window.getStoredData === 'function') {
+            return await window.getStoredData();
         }
+        const stored = localStorage.getItem('lifeToolsData');
+        return stored ? JSON.parse(stored) : [];
     }
 
     function saveStoredData(data) {
@@ -78,7 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const sortedTools = [...visibleTools].sort((a, b) => (b.isFavorite || 0) - (a.isFavorite || 0));
 
             let toolsHTML = sortedTools.map(tool => {
-                const logoSrc = tool.logo || `https://www.google.com/s2/favicons?domain=${new URL(tool.url).hostname}&sz=128`;
+                let domain = "example.com";
+                try { domain = new URL(tool.url).hostname; } catch(err) {}
+                const logoSrc = tool.logo || `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
                 const customBadge = tool.isCustom ? `<span class="tool-badge-custom" title="Created by user">Custom</span>` : '';
                 return `
                     <article class="resource-og-card ${tool.isFavorite ? 'favorite-active' : ''}" data-id="${tool.id}" data-cat="${category.id}">
@@ -310,7 +270,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('confirm-move-cat-pos').onclick = async () => {
                         const newIndex = parseInt(document.getElementById('target-pos-select').value);
                         if (newIndex !== catIndex) {
-                    
                             data.splice(catIndex, 1);
                             data.splice(newIndex, 0, category);
                             saveStoredData(data);
@@ -460,7 +419,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tool = category?.tools.find(t => t.id === toolId);
 
                 if (tool && modal && modalBody) {
-                    const logoSrc = tool.logo || `https://www.google.com/s2/favicons?domain=${new URL(tool.url).hostname}&sz=128`;
+                    let domain = "example.com";
+                    try { domain = new URL(tool.url).hostname; } catch(err) {}
+                    const logoSrc = tool.logo || `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
                     
                     let managementActionsHTML = `
                         <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 8px;">
