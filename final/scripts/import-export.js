@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="modal-badge" style="background-color: #DC2626; color: #FFFFFF;">Warning</span>
                             <h2 style="margin: 15px 0 10px 0;">Selection Required</h2>
                             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Please select at least one item to export.</p>
-                            <button id="close-warning-btn" class="btn btn-primary">Got it</button>
+                            <button id="close-warning-btn" class="lth-btn lth-btn-primary">Got it</button>
                         </div>
                     `;
                     modal.showModal();
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <span class="modal-badge">Success</span>
                                 <h2 style="margin: 15px 0 10px 0;">Backup Imported Successfully</h2>
                                 <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Your data has been successfully imported and synced across your device.</p>
-                                <button id="close-success-btn" class="btn btn-primary">Continue</button>
+                                <button id="close-success-btn" class="lth-btn lth-btn-primary">Continue</button>
                             </div>
                         `;
                         modal.showModal();
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <span class="modal-badge" style="background-color: #DC2626; color: #FFFFFF;">Error</span>
                                 <h2 style="margin: 15px 0 10px 0;">Import Failed</h2>
                                 <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Error parsing JSON file. Please ensure it's a valid Life Tools Hub backup.</p>
-                                <button id="close-error-btn" class="btn btn-primary">Try Again</button>
+                                <button id="close-error-btn" class="lth-btn lth-btn-primary">Try Again</button>
                             </div>
                         `;
                         modal.showModal();

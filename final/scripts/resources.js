@@ -112,12 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!managerBtn) {
             managerBtn = document.createElement('button');
             managerBtn.id = 'open-manager-modal';
-            managerBtn.className = 'btn btn-secondary btn-top-action';
+            managerBtn.className = 'lth-btn lth-btn-secondary btn-top-action';
             actionsContainer.appendChild(managerBtn);
         }
         managerBtn.innerHTML = 'Visibility Manager';
 
-        actionsContainer.querySelectorAll('.btn').forEach(btn => {
+        actionsContainer.querySelectorAll('.lth-btn').forEach(btn => {
             btn.classList.add('btn-top-action');
         });
 
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 hiddenCats.forEach(cat => {
                     managerHTML += `<div class="manager-category-item" style="border: 1px solid var(--border-color); border-radius: 6px; padding: 12px; background: var(--bg-primary); display: flex; justify-content: space-between; align-items: center;">
                         <span style="font-weight: bold; font-size: 0.9rem;">📁 ${cat.name} <em>(Hidden Category)</em></span>
-                        <button class="btn btn-secondary toggle-cat-vis" data-cat="${cat.id}" style="padding: 4px 10px; font-size: 0.8rem;">
+                        <button class="lth-btn lth-btn-secondary toggle-cat-vis" data-cat="${cat.id}" style="padding: 4px 10px; font-size: 0.8rem;">
                             Show Category
                         </button>
                     </div>`;
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const customBadge = tool.isCustom ? `<span class="tool-badge-custom" style="margin-left: 6px;">Custom</span>` : '';
                         managerHTML += `<li style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; padding: 8px 0; border-bottom: 1px solid var(--border-color);">
                             <span style="display: flex; align-items: center;">🔹 ${tool.name} ${customBadge}</span>
-                            <button class="btn btn-secondary toggle-tool-vis" data-cat="${cat.id}" data-tool="${tool.id}" style="padding: 3px 8px; font-size: 0.75rem;">
+                            <button class="lth-btn lth-btn-secondary toggle-tool-vis" data-cat="${cat.id}" data-tool="${tool.id}" style="padding: 3px 8px; font-size: 0.75rem;">
                                 Show Page
                             </button>
                         </li>`;
@@ -257,15 +257,15 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
                                 Choose the new display position for <strong>"${category.name}"</strong>:
                             </p>
-                            <div class="form-group" style="margin-bottom: 20px;">
+                            <div class="lth-form-group" style="margin-bottom: 20px;">
                                 <label for="target-pos-select" style="font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block;">Target Position:</label>
-                                <select id="target-pos-select" class="form-group select" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-size: 0.95rem;">
+                                <select id="target-pos-select" class="lth-form-group select" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-size: 0.95rem;">
                                     ${positionOptionsHTML}
                                 </select>
                             </div>
                             <div style="display: flex; gap: 10px; justify-content: flex-end;">
-                                <button id="confirm-move-cat-pos" class="btn btn-primary">Apply Position</button>
-                                <button id="cancel-move-cat-pos" class="btn btn-secondary">Cancel</button>
+                                <button id="confirm-move-cat-pos" class="lth-btn lth-btn-primary">Apply Position</button>
+                                <button id="cancel-move-cat-pos" class="lth-btn lth-btn-secondary">Cancel</button>
                             </div>
                         </div>
                     `;
@@ -299,13 +299,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="modal-badge">Edit Category</span>
                             <h2 style="margin: 15px 0 15px 0;">Update Category Name</h2>
                             <form id="edit-cat-form" class="feedback-form">
-                                <div class="form-group">
+                                <div class="lth-form-group">
                                     <label for="edit-cat-name">Category Name *</label>
                                     <input type="text" id="edit-cat-name" required value="${category.name}" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main);">
                                 </div>
                                 <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 15px;">
-                                    <button type="submit" class="btn btn-primary">Save Changes</button>
-                                    <button type="button" id="cancel-edit-cat" class="btn btn-secondary">Cancel</button>
+                                    <button type="submit" class="lth-btn lth-btn-primary">Save Changes</button>
+                                    <button type="button" id="cancel-edit-cat" class="lth-btn lth-btn-secondary">Cancel</button>
                                 </div>
                             </form>
                         </div>
@@ -345,8 +345,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 You are about to delete the category <strong>"${category.name}"</strong>. It has <strong>${count}</strong> registered link(s). Deleting it will remove all these links with it.
                             </p>
                             <div style="display: flex; gap: 10px; justify-content: center;">
-                                <button id="confirm-del-cat" class="btn btn-primary" style="background-color: #DC2626; color: #FFFFFF;">Yes, Delete Category</button>
-                                <button id="cancel-del-cat" class="btn btn-secondary">Cancel</button>
+                                <button id="confirm-del-cat" class="lth-btn lth-btn-primary" style="background-color: #DC2626; color: #FFFFFF;">Yes, Delete Category</button>
+                                <button id="cancel-del-cat" class="lth-btn lth-btn-secondary">Cancel</button>
                             </div>
                         </div>
                     `;
@@ -430,9 +430,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     let managementActionsHTML = `
                         <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 8px;">
-                            <button id="open-edit-tool-modal-btn" class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;">Edit Page Details</button>
-                            <button id="open-move-modal-btn" class="btn btn-secondary" style="width: 100%; font-size: 0.85rem;">Move to another category</button>
-                            ${tool.isCustom ? `<button id="modal-delete-tool-btn" class="btn btn-secondary" style="color: #DC2626; border-color: #DC2626; width: 100%; font-size: 0.85rem;">Delete Custom Page</button>` : ''}
+                            <button id="open-edit-tool-modal-btn" class="lth-btn lth-btn-secondary" style="width: 100%; font-size: 0.85rem;">Edit Page Details</button>
+                            <button id="open-move-modal-btn" class="lth-btn lth-btn-secondary" style="width: 100%; font-size: 0.85rem;">Move to another category</button>
+                            ${tool.isCustom ? `<button id="modal-delete-tool-btn" class="lth-btn lth-btn-secondary" style="color: #DC2626; border-color: #DC2626; width: 100%; font-size: 0.85rem;">Delete Custom Page</button>` : ''}
                         </div>
                     `;
 
@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${managementActionsHTML}
 
                             <div class="modal-footer-actions">
-                                <a href="${tool.url}" target="_blank" rel="noopener" class="btn btn-primary">Visit Official Website &rarr;</a>
+                                <a href="${tool.url}" target="_blank" rel="noopener" class="lth-btn lth-btn-primary">Visit Official Website &rarr;</a>
                                 <div class="modal-quick-tools">
                                     <button id="modal-hide-btn" class="icon-btn-modal" title="Hide this page">👁️‍🗨️</button>
                                     <button id="modal-fav-btn" class="icon-btn-modal" title="Toggle Favorite">
@@ -479,12 +479,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     document.getElementById('open-edit-tool-modal-btn').onclick = () => {
                         let nameFieldHTML = tool.isCustom ? `
-                            <div class="form-group">
+                            <div class="lth-form-group">
                                 <label for="edit-tool-name">Tool Name *</label>
                                 <input type="text" id="edit-tool-name" required value="${tool.name}" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main);">
                             </div>
                         ` : `
-                            <div class="form-group">
+                            <div class="lth-form-group">
                                 <label for="edit-tool-name">Tool Name (Official - Locked)</label>
                                 <input type="text" id="edit-tool-name" disabled value="${tool.name}" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--border-color); color: var(--text-muted); cursor: not-allowed;">
                             </div>
@@ -496,13 +496,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <h2 style="margin: 10px 0 15px 0;">Update Page Details</h2>
                                 <form id="edit-tool-form" class="feedback-form">
                                     ${nameFieldHTML}
-                                    <div class="form-group">
+                                    <div class="lth-form-group">
                                         <label for="edit-tool-desc">Description *</label>
                                         <textarea id="edit-tool-desc" rows="3" required style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main);">${tool.desc}</textarea>
                                     </div>
                                     <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 10px;">
-                                        <button type="submit" class="btn btn-primary">Save Changes</button>
-                                        <button type="button" id="cancel-edit-tool" class="btn btn-secondary">Cancel</button>
+                                        <button type="submit" class="lth-btn lth-btn-primary">Save Changes</button>
+                                        <button type="button" id="cancel-edit-tool" class="lth-btn lth-btn-secondary">Cancel</button>
                                     </div>
                                 </form>
                             </div>
@@ -534,15 +534,15 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
                                     Select the destination category for <strong>"${tool.name}"</strong>:
                                 </p>
-                                <div class="form-group" style="margin-bottom: 20px; text-align: left;">
+                                <div class="lth-form-group" style="margin-bottom: 20px; text-align: left;">
                                     <label for="target-cat-select" style="font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block;">Destination Category:</label>
-                                    <select id="target-cat-select" class="form-group select" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-size: 0.95rem;">
+                                    <select id="target-cat-select" class="lth-form-group select" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-size: 0.95rem;">
                                         ${optionsHTML}
                                     </select>
                                 </div>
                                 <div style="display: flex; gap: 10px; justify-content: center;">
-                                    <button id="confirm-move-btn" class="btn btn-primary">Confirm Move</button>
-                                    <button id="cancel-move-btn" class="btn btn-secondary">Cancel</button>
+                                    <button id="confirm-move-btn" class="lth-btn lth-btn-primary">Confirm Move</button>
+                                    <button id="cancel-move-btn" class="lth-btn lth-btn-secondary">Cancel</button>
                                 </div>
                             </div>
                         `;
@@ -573,8 +573,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                         Are you sure you want to delete the custom page <strong>"${tool.name}"</strong>?
                                     </p>
                                     <div style="display: flex; gap: 10px; justify-content: center;">
-                                        <button id="confirm-del-tool" class="btn btn-primary" style="background-color: #DC2626; color: #FFFFFF;">Yes, Delete Page</button>
-                                        <button id="cancel-del-tool" class="btn btn-secondary">Cancel</button>
+                                        <button id="confirm-del-tool" class="lth-btn lth-btn-primary" style="background-color: #DC2626; color: #FFFFFF;">Yes, Delete Page</button>
+                                        <button id="cancel-del-tool" class="lth-btn lth-btn-secondary">Cancel</button>
                                     </div>
                                 </div>
                             `;
@@ -604,19 +604,19 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="modal-badge">${category.name}</span>
                             <h2 style="margin-top: 10px; margin-bottom: 15px;">Add New Resource Page</h2>
                             <form id="add-tool-form" class="feedback-form">
-                                <div class="form-group">
+                                <div class="lth-form-group">
                                     <label for="new-tool-name">Tool Name *</label>
                                     <input type="text" id="new-tool-name" required placeholder="e.g. My Custom Page">
                                 </div>
-                                <div class="form-group">
+                                <div class="lth-form-group">
                                     <label for="new-tool-url">Tool URL *</label>
                                     <input type="url" id="new-tool-url" required placeholder="https://example.com">
                                 </div>
-                                <div class="form-group">
+                                <div class="lth-form-group">
                                     <label for="new-tool-desc">Description</label>
                                     <textarea id="new-tool-desc" rows="3" placeholder="Short summary of this tool..."></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Save Page</button>
+                                <button type="submit" class="lth-btn lth-btn-primary" style="width: 100%; margin-top: 10px;">Save Page</button>
                             </form>
                         </div>
                     `;
@@ -667,11 +667,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="modal-badge">Directory Customization</span>
                         <h2 style="margin-top: 10px; margin-bottom: 15px;">Add New Category</h2>
                         <form id="add-category-form" class="feedback-form">
-                            <div class="form-group">
+                            <div class="lth-form-group">
                                 <label for="new-cat-name">Category Name *</label>
                                 <input type="text" id="new-cat-name" required placeholder="e.g. Design & UI Tools">
                             </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Create Category</button>
+                            <button type="submit" class="lth-btn lth-btn-primary" style="width: 100%; margin-top: 10px;">Create Category</button>
                         </form>
                     </div>
                 `;
