@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources Directory | Life Tools Hub</title>
+    
+    <meta name="description" content="Explore categorized digital resources, bookmark your favorites, and create custom tool lists in Life Tools Hub.">
+    <meta name="author" content="Angel Santafé Palma">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    
+    <script type="module" src="scripts/menu.js"></script>
+    <script type="module" src="scripts/theme.js"></script>
+    <script type="module" src="scripts/dates.js"></script>
+    <script type="module" src="scripts/resources.js"></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🛠️</span>
+                <span class="logo-text">Life Tools <strong>Hub</strong></span>
+            </a>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle color theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <nav id="main-nav" class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="resources.html" class="nav-link active">Resources</a></li>
+                <li><a href="import-export.html" class="nav-link">Import / Export</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="info-section">
+        <div class="directory-header">
+            <h1 class="section-title">Resource Directory</h1>
+            <p class="section-subtitle">Click on any tool to view its technical card, or toggle the heart icon to star your favorites.</p>
+            
+            <div class="directory-actions">
+                <button id="add-category-btn" class="btn btn-primary">+ Add New Category</button>
+                <a href="import-export.html" class="btn btn-secondary">Backup Data (JSON)</a>
+            </div>
+        </div>
+
+        <!-- Dynamic Category Grid Container rendered by JS -->
+        <div id="categories-container" class="categories-grid">
+            <!-- Dynamic JavaScript Content Loading Here -->
+        </div>
+    </main>
+
+    <!-- Interactive Resource Preview Modal Dialog -->
+    <dialog id="resource-modal" class="resource-modal">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-btn" aria-label="Close modal">&times;</button>
+            <div id="modal-body">
+                <!-- Dynamic Modal Content rendered by JS -->
+            </div>
+        </div>
+    </dialog>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Life Tools Hub</h3>
+                <p>Final Project for WDD 231: Web Frontend Development I.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="import-export.html">Import / Export</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Attributions & Demo</h4>
+                <ul>
+                    <li><a href="disclaimer.html">Terms & Disclaimer</a></li>
+                    <li><a href="site-plan.html">SITE PLAN</a></li>
+                    <li><a href="https://www.youtube.com/" target="_blank">🎬 Project Demonstration Video</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Social Media</h4>    
+                <a href="https://www.youtube.com/@angelsantafe2192" target="_blank" aria-label="YouTube" rel="noopener noreferrer"><img src="images/youtube-icon.svg" alt="YouTube" width="40" height="40"></a>
+                <a href="https://github.com/angelsan20/" target="_blank" aria-label="Twitter" rel="noopener noreferrer"><img src="images/github-icon.svg" alt="Github" width="40" height="40"></a>
+                <a href="https://www.linkedin.com/in/angel-santafe-27b746205/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><img src="images/linkedin-icon.png" alt="LinkedIn" width="40" height="40"></a>
+            </div>
+        </div>
+        <div class="footer-bottom-info">
+            <p>&copy; <span id="current-year"></span> | Developed by Angel Asdrubal Santafé Cárcamo</p>
+            <p><span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+</body>
+</html>

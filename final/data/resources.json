@@ -1,0 +1,68 @@
+[
+  {
+    "id": "programming",
+    "name": "Programming and Web Dev",
+    "isHidden": false,
+    "tools": [
+      { "id": "github", "name": "GitHub", "url": "https://github.com/", "desc": "Platform for version control and collaboration, hosting software code repositories.", "logo": "https://www.google.com/s2/favicons?domain=github.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "stackoverflow", "name": "Stack Overflow", "url": "https://stackoverflow.com/", "desc": "An open community for developers to learn, share knowledge, and build their careers.", "logo": "https://www.google.com/s2/favicons?domain=stackoverflow.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "mdn", "name": "MDN Web Docs", "url": "https://developer.mozilla.org", "desc": "Official Mozilla developer documentation for HTML, CSS, and JS.", "logo": "https://www.google.com/s2/favicons?domain=developer.mozilla.org&sz=128", "isFavorite": true, "isCustom": false, "isHidden": false },
+      { "id": "w3c", "name": "W3C Evaluator Suite", "url": "https://validator.w3.org", "desc": "Official web accessibility and markup validation tools.", "logo": "https://www.google.com/s2/favicons?domain=validator.w3.org&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "devdocs", "name": "DevDocs", "url": "https://devdocs.io", "desc": "Unified online documentation browser for programming languages.", "logo": "https://www.google.com/s2/favicons?domain=devdocs.io&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "tinypng", "name": "TinyPNG", "url": "https://tinypng.com", "desc": "Smart image compression tool for WebP, PNG, and JPEG formats.", "logo": "https://www.google.com/s2/favicons?domain=tinypng.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "fontshare", "name": "Fontshare", "url": "https://www.fontshare.com", "desc": "Open collection of professional typography fonts.", "logo": "https://www.google.com/s2/favicons?domain=www.fontshare.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "w3schools", "name": "W3Schools", "url": "https://www.w3schools.com", "desc": "Interactive web tutorials and live code sandbox testing.", "logo": "https://www.google.com/s2/favicons?domain=www.w3schools.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "wave", "name": "Wave Accessibility Evaluation Tool", "url": "https://wave.webaim.org/", "desc": "Page that helps for Evaluate all your page and good practices of accessibility.", "logo": "https://www.google.com/s2/favicons?domain=wave.webaim.org&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "codepen", "name": "CodePen", "url": "https://codepen.io", "desc": "Online front-end code editor and prototyping sandbox.", "logo": "https://www.google.com/s2/favicons?domain=codepen.io&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "css-tricks", "name": "CSS-Tricks", "url": "https://css-tricks.com", "desc": "Articles and guides focusing on CSS Grid, Flexbox, and layouts.", "logo": "https://www.google.com/s2/favicons?domain=css-tricks.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "unsplash", "name": "Unsplash", "url": "https://unsplash.com", "desc": "High-resolution stock photos free for commercial use.", "logo": "https://www.google.com/s2/favicons?domain=unsplash.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "shields", "name": "Shields.io", "url": "https://shields.io", "desc": "Dynamic SVG badge generator for GitHub READMEs.", "logo": "https://www.google.com/s2/favicons?domain=shields.io&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false }
+    ]
+  },
+  {
+    "id": "fitness",
+    "name": "Fitness & Training",
+    "isHidden": false,
+    "tools": [
+      { "id": "tdee", "name": "TDEE Calculator", "url": "https://tdeecalculator.net", "desc": "Energy expenditure calculator and macro split planner.", "logo": "https://www.google.com/s2/favicons?domain=tdeecalculator.net&sz=128", "isFavorite": true, "isCustom": false, "isHidden": false },
+      { "id": "interval", "name": "Interval Timer", "url": "https://www.intervaltimer.com", "desc": "Configurable web timer for HIIT and Tabata routines.", "logo": "https://www.google.com/s2/favicons?domain=www.intervaltimer.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "exrx", "name": "ExRx.net", "url": "https://exrx.net", "desc": "Technical database of exercise biomechanics and anatomy.", "logo": "https://www.google.com/s2/favicons?domain=exrx.net&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "darebee", "name": "Darebee", "url": "https://darebee.com", "desc": "Free visual workout PDFs and daily fitness challenges.", "logo": "https://www.google.com/s2/favicons?domain=darebee.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "bbcom", "name": "Bodybuilding.com Database", "url": "https://www.bodybuilding.com/exercises", "desc": "Structured exercise guide with muscle group targeting.", "logo": "https://www.google.com/s2/favicons?domain=www.bodybuilding.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "musclewiki", "name": "MuscleWiki", "url": "https://musclewiki.com", "desc": "Interactive body map for targeted weight training exercises.", "logo": "https://www.google.com/s2/favicons?domain=musclewiki.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false }
+    ]
+  },
+  {
+    "id": "cooking",
+    "name": "Cooking & Recipes",
+    "isHidden": false,
+    "tools": [
+      { "id": "recipe-finder", "name": "Recipe Finder", "url": "#", "desc": "Customizable tool to discover dishes based on ingredients available in your pantry.", "logo": "https://www.google.com/s2/favicons?domain=example.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "supercook", "name": "SuperCook", "url": "https://www.supercook.com", "desc": "Zero-waste recipe generator using available kitchen ingredients.", "logo": "https://www.google.com/s2/favicons?domain=www.supercook.com&sz=128", "isFavorite": true, "isCustom": false, "isHidden": false },
+      { "id": "pantry", "name": "Pantry Recipe Finder", "url": "https://www.pantryrecipefinder.com", "desc": "Ingredient-based recipe matching portal for smart cooking.", "logo": "https://www.google.com/s2/favicons?domain=www.pantryrecipefinder.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "myfridge", "name": "My Fridge Food", "url": "https://www.myfridgefood.com", "desc": "Recipes based on leftover ingredients in your fridge.", "logo": "https://www.google.com/s2/favicons?domain=www.myfridgefood.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "seriouseats", "name": "Serious Eats", "url": "https://www.seriouseats.com", "desc": "Scientific culinary resource focusing on food science and technique.", "logo": "https://www.google.com/s2/favicons?domain=www.seriouseats.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "foodcombo", "name": "Food Combo", "url": "https://foodcombo.com", "desc": "Culinary tool for exploring flavor combinations.", "logo": "https://www.google.com/s2/favicons?domain=foodcombo.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "allrecipes", "name": "Allrecipes", "url": "https://www.allrecipes.com", "desc": "Step-by-step recipe database with nutritional breakdowns.", "logo": "https://www.google.com/s2/favicons?domain=www.allrecipes.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "bbc", "name": "BBC Good Food", "url": "https://www.bbcgoodfood.com", "desc": "Recipe portal with meal prep plans and guides.", "logo": "https://www.google.com/s2/favicons?domain=www.bbcgoodfood.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false }
+    ]
+  },
+  {
+    "id": "entertainment",
+    "name": "Entertainment & Gaming",
+    "isHidden": false,
+    "tools": [
+      { "id": "steam", "name": "Steam Community", "url": "https://store.steampowered.com", "desc": "PC gaming hub for discovery, reviews, and community forums.", "logo": "https://www.google.com/s2/favicons?domain=store.steampowered.com&sz=128", "isFavorite": true, "isCustom": false, "isHidden": false },
+      { "id": "epic", "name": "Epic Games Free Games", "url": "https://store.epicgames.com", "desc": "Official portal tracking weekly free PC game promotions.", "logo": "https://www.google.com/s2/favicons?domain=store.epicgames.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "igdb", "name": "IGDB", "url": "https://www.igdb.com", "desc": "Global database for video games and developer metadata.", "logo": "https://www.google.com/s2/favicons?domain=www.igdb.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "prosettings", "name": "ProSettings", "url": "https://prosettings.net", "desc": "Hardware specs and sensitivities of esports professionals.", "logo": "https://www.google.com/s2/favicons?domain=prosettings.net&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "howlongtobeat", "name": "How Long To Beat", "url": "https://howlongtobeat.com", "desc": "Platform providing estimated completion times for video games across all platforms and play styles.", "logo": "https://www.google.com/s2/favicons?domain=howlongtobeat.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "isthereanydeal", "name": "Is There Any Deal", "url": "https://isthereanydeal.com", "desc": "Tracks video game price histories, deals, bundles, and historical lows across official digital stores.", "logo": "https://www.google.com/s2/favicons?domain=isthereanydeal.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "ggdeals", "name": "GG.deals", "url": "https://gg.deals", "desc": "Price aggregator for PC games comparing keyshops and official digital game stores.", "logo": "https://www.google.com/s2/favicons?domain=gg.deals&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "canirunit", "name": "Can I Run It", "url": "https://www.systemrequirementslab.com/cyri", "desc": "Analyzes computer hardware specifications against game requirements to check compatibility.", "logo": "https://www.google.com/s2/favicons?domain=systemrequirementslab.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "opencritic", "name": "OpenCritic", "url": "https://opencritic.com", "desc": "Video game review aggregator collecting scores, media critiques, and user ratings.", "logo": "https://www.google.com/s2/favicons?domain=opencritic.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "mobygames", "name": "MobyGames", "url": "https://www.mobygames.com", "desc": "Comprehensive video game database archiving developer credits, cover art, and release data.", "logo": "https://www.google.com/s2/favicons?domain=mobygames.com&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false },
+      { "id": "steamdb", "name": "Steam Database", "url": "https://steamdb.info", "desc": "Database of Steam applications tracking player counts, patch histories, sales, and statistics.", "logo": "https://www.google.com/s2/favicons?domain=steamdb.info&sz=128", "isFavorite": false, "isCustom": false, "isHidden": false }
+    ]
+  }
+]

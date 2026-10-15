@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Tools Hub | Digital Resource & Productivity Hub</title>
+    
+    <meta name="description" content="Life Tools Hub is a centralized platform to organize, manage, and discover digital resources for programming, cooking, fitness, and entertainment.">
+    <meta name="author" content="Angel Santafé Palma">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Life Tools Hub | Your Digital Toolkit">
+    <meta property="og:description" content="Organize your bookmarks, discover new tools, and export custom JSON lists.">
+    <meta property="og:image" content="images/hero-banner.webp">
+    <meta property="og:url" content="https://username.github.io/wdd231/finalproject/index.html">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    
+    <script type="module" src="scripts/menu.js"></script>
+    <script type="module" src="scripts/theme.js"></script>
+    <script type="module" src="scripts/dates.js"></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🛠️</span>
+                <span class="logo-text">Life Tools <strong>Hub</strong></span>
+            </a>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle color theme" title="Toggle Light/Dark Theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+
+        <nav id="main-nav" class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="import-export.html" class="nav-link">Import / Export</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="hero-badge">Digital Hardware Toolkit</span>
+                <h1 class="hero-title">Organize Your Resources. Optimize Your Growth.</h1>
+                <p class="hero-description">
+                    Life Tools Hub centralizes your essential links for programming, cooking, fitness, and entertainment in one accessible, lightweight, and custom-tailored local hub.
+                </p>
+                <div class="hero-buttons">
+                    <a href="resources.html" class="btn btn-primary">Explore Resources</a>
+                    <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="images/hero-banner.webp" alt="Interactive collage displaying programming, fitness, and cooking digital tools" class="hero-img" width="600" height="400" loading="eager">
+            </div>
+        </section>
+
+        <section id="how-it-works" class="info-section">
+            <h2 class="section-title">Your Local & Portable Command Center</h2>
+            <p class="section-subtitle">Engineered for speed, privacy, and durability without server overhead.</p>
+            
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3>Categorized Curations</h3>
+                    <p>Access predefined collections of web docs, coding tools, workout channels, and recipe books out of the box.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Smart Favorites</h3>
+                    <p>Click the heart icon to star your top links and automatically pin them to the top of each category list.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Local Storage & JSON</h3>
+                    <p>Your additions stay safe in your browser. Export customized JSON backups to transfer your tools anywhere.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Custom Categories</h3>
+                    <p>Create new categories on the fly and append custom links with preview modals and rich metadata cards.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2>Build Your Personal Resource Library Today</h2>
+                <p>Start organizing your shortcuts or export a JSON backup directly to your device.</p>
+                <a href="import-export.html" class="btn btn-primary">Manage Your Lists</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Life Tools Hub</h3>
+                <p>Final Project for WDD 231: Web Frontend Development I.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="import-export.html">Import / Export</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Attributions & Demo</h4>
+                <ul>
+                    <li><a href="disclaimer.html">Terms & Disclaimer</a></li>
+                    <li><a href="site-plan.html">SITE PLAN</a></li>
+                    <li><a href="https://www.youtube.com/" target="_blank">🎬 Project Demonstration Video</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Social Media</h4>    
+                <a href="https://www.youtube.com/@angelsantafe2192" target="_blank" aria-label="YouTube" rel="noopener noreferrer"><img src="images/youtube-icon.svg" alt="YouTube" width="40" height="40"></a>
+                <a href="https://github.com/angelsan20/" target="_blank" aria-label="Twitter" rel="noopener noreferrer"><img src="images/github-icon.svg" alt="Github" width="40" height="40"></a>
+                <a href="https://www.linkedin.com/in/angel-santafe-27b746205/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><img src="images/linkedin-icon.png" alt="LinkedIn" width="40" height="40"></a>
+            </div>
+        </div>
+        <div class="footer-bottom-info">
+            <p>&copy; <span id="current-year"></span> | Developed by Angel Asdrubal Santafé Cárcamo</p>
+            <p><span id="last-modified"></span></p>
+        </div>
+    </footer>
+
+</body>
+</html>

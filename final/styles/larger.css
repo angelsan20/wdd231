@@ -1,0 +1,99 @@
+/* ===========
+   larger.css
+   =========== */
+   @media (min-width: 768px) {
+    .hamburger-btn {
+        display: none;
+    }
+
+    .site-header {
+        padding: 20px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .header-actions {
+        margin-right: 20px;
+    }
+
+    .main-nav {
+        width: 100%;
+    }
+
+    .nav-list {
+        display: flex !important;
+        flex-direction: row;
+        gap: 30px;
+        border-top: 1px solid var(--border-color);
+        padding-top: 12px;
+        margin: 0;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .checklist-tools {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-section {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .hero-content {
+        align-items: flex-start;
+        flex: 1.2;
+    }
+
+    .hero-title {
+        text-align: left;
+        font-size: 2.3rem;
+    }
+
+    .hero-description {
+        text-align: justify;
+    }
+
+    .hero-buttons {
+        justify-content: flex-start;
+    }
+
+    .hero-image-container {
+        flex: 1;
+        max-width: 500px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
