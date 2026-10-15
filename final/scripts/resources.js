@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const container = document.getElementById('categories-container');
-    const modal = document.getElementById('resource-modal');
+    const modal = document.getElementById('lth-modal');
     const modalBody = document.getElementById('modal-body');
     const closeModalBtn = document.getElementById('close-modal-btn');
     const addCategoryBtn = document.getElementById('add-category-btn');
@@ -43,10 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 let domain = "example.com";
                 try { domain = new URL(tool.url).hostname; } catch(err) {}
                 const logoSrc = tool.logo || `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
-                const customBadge = tool.isCustom ? `<span class="tool-badge-custom" title="Created by user">Custom</span>` : '';
+                const customBadge = tool.isCustom ? `<span class="lth-custom-tag" title="Created by user">Custom</span>` : '';
                 return `
-                    <div class="resource-og-card ${tool.isFavorite ? 'favorite-active' : ''}" data-id="${tool.id}" data-cat="${category.id}">
-                        <div class="og-card-logo-container">
+                    <div class="lth-tool-item ${tool.isFavorite ? 'favorite-active' : ''}" data-id="${tool.id}" data-cat="${category.id}">
+                        <div class="og-card-logo-wrapper">
                             <img src="${logoSrc}" alt="${tool.name} logo" class="og-card-logo" loading="lazy">
                         </div>
                         <div class="og-card-content">
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categoryEl.innerHTML = `
                 <div class="category-card-header">
                     <h2>${category.name}</h2>
-                    <div class="category-menu-container">
+                    <div class="category-menu-wrapper">
                         <button class="cat-menu-toggle-btn" aria-label="Category menu" title="Options">•••</button>
                         <div class="category-dropdown-menu">
                             ${menuItemsHTML}
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const hasHiddenItems = hiddenCats.length > 0 || catsWithHiddenTools.length > 0;
 
             let managerHTML = `<div class="modal-form-container">
-                <span class="modal-badge">Visibility Manager</span>
+                <span class="lth-modal-tag">Visibility Manager</span>
                 <h2 style="margin: 10px 0 5px 0;">Hidden Items Manager</h2>
                 <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">Review and restore categories or pages you previously hid.</p>`;
 
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <ul id="cat-tools-${index}" style="list-style: none; padding: 0 12px; margin: 0; display: none; flex-direction: column; gap: 6px; background: var(--bg-surface); border-top: 1px solid var(--border-color);">`;
                     
                     hiddenTools.forEach(tool => {
-                        const customBadge = tool.isCustom ? `<span class="tool-badge-custom" style="margin-left: 6px;">Custom</span>` : '';
+                        const customBadge = tool.isCustom ? `<span class="lth-custom-tag" style="margin-left: 6px;">Custom</span>` : '';
                         managerHTML += `<li style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; padding: 8px 0; border-bottom: 1px solid var(--border-color);">
                             <span style="display: flex; align-items: center;">🔹 ${tool.name} ${customBadge}</span>
                             <button class="lth-btn lth-btn-secondary toggle-tool-vis" data-cat="${cat.id}" data-tool="${tool.id}" style="padding: 3px 8px; font-size: 0.75rem;">
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     modalBody.innerHTML = `
                         <div class="modal-form-container" style="padding: 10px;">
-                            <span class="modal-badge">Reorder Category</span>
+                            <span class="lth-modal-tag">Reorder Category</span>
                             <h2 style="margin: 15px 0 10px 0;">Move Category Position</h2>
                             <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
                                 Choose the new display position for <strong>"${category.name}"</strong>:
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (modal && modalBody) {
                     modalBody.innerHTML = `
                         <div class="modal-form-container" style="padding: 10px;">
-                            <span class="modal-badge">Edit Category</span>
+                            <span class="lth-modal-tag">Edit Category</span>
                             <h2 style="margin: 15px 0 15px 0;">Update Category Name</h2>
                             <form id="edit-cat-form" class="feedback-form">
                                 <div class="lth-form-group">
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (modal && modalBody) {
                     modalBody.innerHTML = `
                         <div class="modal-form-container" style="text-align: center; padding: 10px;">
-                            <span class="modal-badge">Delete Category</span>
+                            <span class="lth-modal-tag">Delete Category</span>
                             <h2 style="margin: 15px 0 10px 0;">Are you sure?</h2>
                             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
                                 You are about to delete the category <strong>"${category.name}"</strong>. It has <strong>${count}</strong> registered link(s). Deleting it will remove all these links with it.
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.hide-tool-btn').forEach(btn => {
             btn.addEventListener('click', async (e) => {
                 e.stopPropagation();
-                const card = btn.closest('.resource-og-card');
+                const card = btn.closest('.lth-tool-item');
                 const toolId = card.dataset.id;
                 const catId = card.dataset.cat;
                 const data = await getStoredData();
@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.favorite-icon-btn').forEach(btn => {
             btn.addEventListener('click', async (e) => {
                 e.stopPropagation();
-                const card = btn.closest('.resource-og-card');
+                const card = btn.closest('.lth-tool-item');
                 const toolId = card.dataset.id;
                 const catId = card.dataset.cat;
 
@@ -413,7 +413,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        document.querySelectorAll('.resource-og-card').forEach(card => {
+        document.querySelectorAll('.lth-tool-item').forEach(card => {
             card.addEventListener('click', async (e) => {
                 if (e.target.tagName === 'A' || e.target.closest('button')) return;
 
@@ -438,12 +438,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     modalBody.innerHTML = `
                         <div class="modal-og-preview">
-                            <span class="modal-badge">${category.name}</span>
+                            <span class="lth-modal-tag">${category.name}</span>
                             <div class="modal-og-banner-centered">
                                 <img src="${logoSrc}" alt="${tool.name}" class="modal-og-img">
                             </div>
                             <h2 style="margin-top: 15px; margin-bottom: 5px; text-align: center;">
-                                ${tool.name} ${tool.isCustom ? '<span class="tool-badge-custom">Custom</span>' : ''}
+                                ${tool.name} ${tool.isCustom ? '<span class="lth-custom-tag">Custom</span>' : ''}
                             </h2>
                             <p class="modal-desc" style="text-align: center;">${tool.desc}</p>
                             <span class="modal-url" style="text-align: center; display: block; margin-bottom: 10px;">${tool.url}</span>
@@ -492,7 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         modalBody.innerHTML = `
                             <div class="modal-form-container" style="padding: 10px;">
-                                <span class="modal-badge">Edit Page</span>
+                                <span class="lth-modal-tag">Edit Page</span>
                                 <h2 style="margin: 10px 0 15px 0;">Update Page Details</h2>
                                 <form id="edit-tool-form" class="feedback-form">
                                     ${nameFieldHTML}
@@ -529,7 +529,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         modalBody.innerHTML = `
                             <div class="modal-form-container" style="text-align: center; padding: 10px;">
-                                <span class="modal-badge">Reassign Category</span>
+                                <span class="lth-modal-tag">Reassign Category</span>
                                 <h2 style="margin: 15px 0 10px 0;">Move Page</h2>
                                 <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
                                     Select the destination category for <strong>"${tool.name}"</strong>:
@@ -567,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         document.getElementById('modal-delete-tool-btn').onclick = () => {
                             modalBody.innerHTML = `
                                 <div class="modal-form-container" style="text-align: center; padding: 10px;">
-                                    <span class="modal-badge">Delete Page</span>
+                                    <span class="lth-modal-tag">Delete Page</span>
                                     <h2 style="margin: 15px 0 10px 0;">Are you sure?</h2>
                                     <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
                                         Are you sure you want to delete the custom page <strong>"${tool.name}"</strong>?
@@ -601,7 +601,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (category && modal && modalBody) {
                     modalBody.innerHTML = `
                         <div class="modal-form-container">
-                            <span class="modal-badge">${category.name}</span>
+                            <span class="lth-modal-tag">${category.name}</span>
                             <h2 style="margin-top: 10px; margin-bottom: 15px;">Add New Resource Page</h2>
                             <form id="add-tool-form" class="feedback-form">
                                 <div class="lth-form-group">
@@ -664,7 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (modal && modalBody) {
                 modalBody.innerHTML = `
                     <div class="modal-form-container">
-                        <span class="modal-badge">Directory Customization</span>
+                        <span class="lth-modal-tag">Directory Customization</span>
                         <h2 style="margin-top: 10px; margin-bottom: 15px;">Add New Category</h2>
                         <form id="add-category-form" class="feedback-form">
                             <div class="lth-form-group">

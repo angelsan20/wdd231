@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const container = document.getElementById('results-container');
+    const container = document.getElementById('results-wrapper');
 
     const labels = {
         fullName: 'Full Name',
@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 container.innerHTML = `
                     <div class="success-alert-box">
-                        <h3 class="success-alert-title">Message Sent Successfully!</h3>
-                        <p class="success-alert-text">Your data has been confirmed and successfully sent to our team.</p>
+                        <h3 class="lth-succes-title">Message Sent Successfully!</h3>
+                        <p class="lth-succes-text">Your data has been confirmed and successfully sent to our team.</p>
                     </div>
                 `;
                 actionWrapper.innerHTML = `

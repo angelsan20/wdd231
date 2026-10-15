@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const checklistContainer = document.getElementById('export-checklist-container');
     const exportBtn = document.getElementById('export-json-btn');
     const importFileInput = document.getElementById('import-file-input');
-    const modal = document.getElementById('resource-modal');
+    const modal = document.getElementById('lth-modal');
     const modalBody = document.getElementById('modal-body');
 
     async function getStoredData() {
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (modal && modalBody) {
                     modalBody.innerHTML = `
                         <div class="modal-form-container" style="text-align: center; padding: 10px;">
-                            <span class="modal-badge" style="background-color: #DC2626; color: #FFFFFF;">Warning</span>
+                            <span class="lth-modal-tag" style="background-color: #DC2626; color: #FFFFFF;">Warning</span>
                             <h2 style="margin: 15px 0 10px 0;">Selection Required</h2>
                             <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Please select at least one item to export.</p>
                             <button id="close-warning-btn" class="lth-btn lth-btn-primary">Got it</button>
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (modal && modalBody) {
                         modalBody.innerHTML = `
                             <div class="modal-form-container" style="text-align: center; padding: 10px;">
-                                <span class="modal-badge">Success</span>
+                                <span class="lth-modal-tag">Success</span>
                                 <h2 style="margin: 15px 0 10px 0;">Backup Imported Successfully</h2>
                                 <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Your data has been successfully imported and synced across your device.</p>
                                 <button id="close-success-btn" class="lth-btn lth-btn-primary">Continue</button>
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (modal && modalBody) {
                         modalBody.innerHTML = `
                             <div class="modal-form-container" style="text-align: center; padding: 10px;">
-                                <span class="modal-badge" style="background-color: #DC2626; color: #FFFFFF;">Error</span>
+                                <span class="lth-modal-tag" style="background-color: #DC2626; color: #FFFFFF;">Error</span>
                                 <h2 style="margin: 15px 0 10px 0;">Import Failed</h2>
                                 <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Error parsing JSON file. Please ensure it's a valid Life Tools Hub backup.</p>
                                 <button id="close-error-btn" class="lth-btn lth-btn-primary">Try Again</button>
