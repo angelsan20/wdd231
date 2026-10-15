@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore categorized digital resources, bookmark your favorites, and create custom tool lists in Life Tools Hub.">
+    <meta name="author" content="Angel Asdrubal Santafé Cárcamo">
     <title>Resources Directory | Life Tools Hub</title>
     
-    <meta name="description" content="Explore categorized digital resources, bookmark your favorites, and create custom tool lists in Life Tools Hub.">
-    <meta name="author" content="Angel Santafé Palma">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    </noscript>
     
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
     
-    <script type="module" src="scripts/menu.js"></script>
-    <script type="module" src="scripts/theme.js"></script>
-    <script type="module" src="scripts/dates.js"></script>
+    <script type="module" src="scripts/function.js"></script>
     <script type="module" src="scripts/resources.js"></script>
 </head>
 <body>
@@ -64,13 +65,11 @@
             </div>
         </div>
 
-        <!-- Dynamic Category Grid Container rendered by JS -->
         <div id="categories-container" class="categories-grid">
             <!-- Dynamic JavaScript Content Loading Here -->
         </div>
     </main>
 
-    <!-- Interactive Resource Preview Modal Dialog -->
     <dialog id="resource-modal" class="resource-modal">
         <div class="modal-content">
             <button id="close-modal-btn" class="close-btn" aria-label="Close modal">&times;</button>

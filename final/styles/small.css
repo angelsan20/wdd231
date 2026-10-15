@@ -437,12 +437,6 @@ body.dark-theme img[src*="github"] {
 .cta-container {
     position: relative;
     background-color: var(--bg-surface);
-    background-image: 
-        linear-gradient(rgba(241, 245, 249, 0.90), rgba(241, 245, 249, 0.90)), 
-        url('../images/hero-banner.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     border: 2px solid #000000;
     border-radius: 12px;
     padding: 40px 30px;
@@ -453,11 +447,23 @@ body.dark-theme img[src*="github"] {
     overflow: hidden;
 }
 
+.cta-container.lazy-bg {
+    background-image: 
+        linear-gradient(rgba(241, 245, 249, 0.90), rgba(241, 245, 249, 0.90)), 
+        url('../images/hero-banner.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 body.dark-theme .cta-container {
+    border-color: var(--border-color);
+}
+
+body.dark-theme .cta-container.lazy-bg {
     background-image: 
         linear-gradient(rgba(30, 41, 59, 0.80), rgba(30, 41, 59, 0.80)), 
         url('../images/hero-banner.webp');
-    border-color: var(--border-color);
 }
 
 /* ==========================================================================
@@ -821,7 +827,7 @@ body.dark-theme .cta-container {
 }
 
 /* ==========================================================================
-   6. IMPORT / EXPORT PAGE DESIGN (Grid de 2 columnas y selectores individuales)
+   6. IMPORT / EXPORT PAGE DESIGN
    ========================================================================== */
 .export-controls {
     display: flex;

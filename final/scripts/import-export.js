@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             groupEl.innerHTML = `
                 <div class="checklist-group-header">
-                    <h3>📁 ${category.name}</h3>
+                    <h2>📁 ${category.name}</h2>
                     <button type="button" class="cat-select-all-btn" data-cat-index="${catIndex}">Select All/Deselect All</button>
                 </div>
                 <div class="checklist-tools">

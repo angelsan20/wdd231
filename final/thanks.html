@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for your feedback submission to Life Tools Hub.">
+    <meta name="author" content="Angel Asdrubal Santafé Cárcamo">
     <title>Feedback Received | Life Tools Hub</title>
     
-    <meta name="description" content="Thank you for your feedback submission to Life Tools Hub.">
-    <meta name="author" content="Angel Santafé Palma">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    </noscript>
     
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
     
-    <script type="module" src="scripts/menu.js"></script>
-    <script type="module" src="scripts/theme.js"></script>
-    <script type="module" src="scripts/dates.js"></script>
+    <script type="module" src="scripts/function.js"></script>
     <script type="module" src="scripts/thanks.js"></script>
 </head>
 <body>
@@ -59,7 +60,7 @@
 
         <section class="contact-form-container" style="text-align: left;">
             <div id="results-container" style="display: flex; flex-direction: column; gap: 15px;">
-                <!-- Los datos del formulario se cargan dinámicamente mediante thanks.js -->
+                <!-- The data from the form is loaded dynamically using thanks.js -->
             </div>
             
             <div style="margin-top: 30px; text-align: center;">

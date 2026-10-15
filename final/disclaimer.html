@@ -1,57 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read the terms, conditions, and legal disclaimer for LTH. Understand our content usage policies, third-party link disclaimers, and user responsibilities.">
+    <meta name="author" content="Angel Asdrubal Santafé Cárcamo">
     <title>Trademark & Legal Disclaimer | Life Tools Hub</title>
     
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    </noscript>
     
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
     
-    <script type="module" src="scripts/menu.js"></script>
-    <script type="module" src="scripts/theme.js"></script>
-    <script type="module" src="scripts/dates.js"></script>
+    <script type="module" src="scripts/function.js"></script>
+    
 </head>
 <body>
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="main-header">
+    <header class="site-header">
         <div class="header-container">
-            <a href="index.html" class="brand-logo">
+            <a href="index.html" class="logo">
                 <span class="logo-icon">🛠️</span>
-                <span class="logo-text">Life Tools Hub</span>
+                <span class="logo-text">Life Tools <strong>Hub</strong></span>
             </a>
-            
+
             <div class="header-actions">
-                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-                    <span id="theme-icon">☀️</span> <span id="theme-text">Light</span>
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle color theme">
+                    <span class="theme-icon">🌙</span>
                 </button>
-                <button id="menu-toggle" class="hamburger-btn" aria-label="Toggle Menu">
-                    <span class="hamburger-bar"></span>
-                    <span class="hamburger-bar"></span>
-                    <span class="hamburger-bar"></span>
+                <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </button>
             </div>
-
-            <nav class="main-nav" id="main-nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="resources.html" class="nav-link">Resources</a></li>
-                    <li><a href="import-export.html" class="nav-link">Import / Export</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
-                </ul>
-            </nav>
         </div>
+
+        <nav id="main-nav" class="main-nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="import-export.html" class="nav-link">Import / Export</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- MAIN CONTENT CONTAINER -->
     <main class="disclaimer-page-container">
         <section class="disclaimer-card">
             <div class="disclaimer-header-badge">LEGAL NOTICE & FAIR USE</div>
@@ -98,7 +100,6 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
