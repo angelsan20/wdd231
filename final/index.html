@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Life Tools Hub is a centralized platform to organize, manage, and discover digital resources for programming, cooking, fitness, and entertainment.">
+    <meta name="description"
+        content="Life Tools Hub is a centralized platform to organize, manage, and discover digital resources for programming, cooking, fitness, and entertainment.">
     <meta name="author" content="Angel Asdrubal Santafé Cárcamo">
     <title>Life Tools Hub | Digital Resource & Productivity Hub</title>
-    
+
     <meta property="og:type" content="website">
     <meta property="og:title" content="Life Tools Hub | Your Digital Toolkit">
-    <meta property="og:description" content="Organize your bookmarks, discover new tools, and export custom JSON lists.">
+    <meta property="og:description"
+        content="Organize your bookmarks, discover new tools, and export custom JSON lists.">
     <meta property="og:image" content="images/">
     <meta property="og:url" content="https://username.github.io/wdd231/finalproject/index.html">
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    </noscript>
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
-    
+
     <script type="module" src="scripts/function.js"></script>
 
 </head>
+
 <body>
 
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="logo">
-                <span class="logo-icon"><img src="images/logo.webp" alt="Logo of Life Tools Hub" width="60px" height="60px"></span>
+                <span class="logo-icon"><img src="images/logo.webp" alt="Logo of Life Tools Hub" width="70"
+                        height="60"></span>
                 <span class="logo-text">Life Tools <strong>Hub</strong></span>
             </a>
 
             <div class="header-actions">
-                <button id="theme-toggle" class="icon-btn" aria-label="Toggle color theme" title="Toggle Light/Dark Theme">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle color theme"
+                    title="Toggle Light/Dark Theme">
                     <span class="theme-icon">🌙</span>
                 </button>
-                <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle navigation menu"
+                    aria-expanded="false">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -66,7 +70,8 @@
                 <span class="hero-badge">Digital Hardware Toolkit</span>
                 <h1 class="hero-title">Organize Your Resources. Optimize Your Growth.</h1>
                 <p class="hero-description">
-                    Life Tools Hub centralizes your essential links for programming, cooking, fitness, and entertainment in one accessible, lightweight, and custom-tailored local hub.
+                    Life Tools Hub centralizes your essential links for programming, cooking, fitness, and entertainment
+                    in one accessible, lightweight, and custom-tailored local hub.
                 </p>
                 <div class="hero-buttons">
                     <a href="resources.html" class="lth-btn lth-btn-primary">Explore Resources</a>
@@ -74,37 +79,43 @@
                 </div>
             </div>
             <div class="hero-image-container">
-                <img src="images/hero-banner.webp" alt="Interactive collage displaying programming, fitness, and cooking digital tools" class="hero-img" width="600" height="338" loading="eager">
+                <img src="images/hero-banner.webp"
+                    alt="Interactive collage displaying programming, fitness, and cooking digital tools"
+                    class="hero-img" width="600" height="338" loading="eager" fetchpriority="high">
             </div>
         </section>
 
         <section id="how-it-works" class="info-section">
             <h2 class="section-title">Your Local & Portable Command Center</h2>
             <p class="section-subtitle">Engineered for speed, privacy, and durability without server overhead.</p>
-            
+
             <div class="features-grid">
                 <article class="feature-card">
                     <div class="feature-icon">📁</div>
                     <h3>Categorized Curations</h3>
-                    <p>Access predefined collections of web docs, coding tools, workout channels, and recipe books out of the box.</p>
+                    <p>Access predefined collections of web docs, coding tools, workout channels, and recipe books out
+                        of the box.</p>
                 </article>
 
                 <article class="feature-card">
                     <div class="feature-icon">❤️</div>
                     <h3>Smart Favorites</h3>
-                    <p>Click the heart icon to star your top links and automatically pin them to the top of each category list.</p>
+                    <p>Click the heart icon to star your top links and automatically pin them to the top of each
+                        category list.</p>
                 </article>
 
                 <article class="feature-card">
                     <div class="feature-icon">💾</div>
                     <h3>Local Storage & JSON</h3>
-                    <p>Your additions stay safe in your browser. Export customized JSON backups to transfer your tools anywhere.</p>
+                    <p>Your additions stay safe in your browser. Export customized JSON backups to transfer your tools
+                        anywhere.</p>
                 </article>
 
                 <article class="feature-card">
                     <div class="feature-icon">🎨</div>
                     <h3>Custom Categories</h3>
-                    <p>Create new categories on the fly and append custom links with preview modals and rich metadata cards.</p>
+                    <p>Create new categories on the fly and append custom links with preview modals and rich metadata
+                        cards.</p>
                 </article>
             </div>
         </section>
@@ -142,10 +153,16 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Social Media</h4>    
-                <a href="https://www.youtube.com/@angelsantafe2192" target="_blank" aria-label="YouTube" rel="noopener noreferrer"><img src="images/youtube-icon.svg" alt="YouTube" width="40" height="40" loading="lazy"></a>
-                <a href="https://github.com/angelsan20/" target="_blank" aria-label="Twitter" rel="noopener noreferrer"><img src="images/github-icon.svg" alt="Github" width="40" height="40" loading="lazy"></a>
-                <a href="https://www.linkedin.com/in/angel-santafe-27b746205/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer"><img src="images/linkedin-icon.webp" alt="LinkedIn" width="40" height="40" loading="lazy"></a>
+                <h4>Social Media</h4>
+                <a href="https://www.youtube.com/@angelsantafe2192" target="_blank" aria-label="YouTube"
+                    rel="noopener noreferrer"><img src="images/youtube-icon.svg" alt="YouTube" width="40" height="40"
+                        loading="lazy"></a>
+                <a href="https://github.com/angelsan20/" target="_blank" aria-label="Twitter"
+                    rel="noopener noreferrer"><img src="images/github-icon.svg" alt="Github" width="40" height="40"
+                        loading="lazy"></a>
+                <a href="https://www.linkedin.com/in/angel-santafe-27b746205/" target="_blank" aria-label="LinkedIn"
+                    rel="noopener noreferrer"><img src="images/linkedin-icon.webp" alt="LinkedIn" width="40" height="40"
+                        loading="lazy"></a>
             </div>
         </div>
         <div class="footer-bottom-info">
@@ -155,4 +172,5 @@
     </footer>
 
 </body>
+
 </html>
