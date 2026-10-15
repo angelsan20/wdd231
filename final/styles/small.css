@@ -282,7 +282,7 @@ body.dark-theme img[src*="github"] {
     }
 }
 
-.lth-btn {
+.lth-button {
     padding: 9px 18px;
     border-radius: 6px;
     font-weight: 700;
@@ -297,7 +297,7 @@ body.dark-theme img[src*="github"] {
     text-decoration: none;
 }
 
-.lth-btn:active {
+.lth-button:active {
     transform: scale(0.98);
 }
 
@@ -307,28 +307,28 @@ body.dark-theme img[src*="github"] {
     box-shadow: 0 4px 8px rgba(245, 158, 11, 0.2);
 }
 
-.lth-btn-primary {
+.lth-button-model1 {
     background-color: var(--accent-yellow);
     color: #000000;
     font-weight: 800;
     text-decoration: none;
 }
 
-.lth-btn-primary:hover {
+.lth-button-model1:hover {
     background-color: #D97706;
     color: #000000;
     transform: translateY(-2px);
     filter: brightness(1.05);
 }
 
-.lth-btn-secondary {
+.lth-button-model2 {
     background-color: var(--bg-surface);
     color: var(--text-main);
     border: 1px solid var(--border-color);
     text-decoration: none;
 }
 
-.lth-btn-secondary:hover {
+.lth-button-model2:hover {
     background-color: var(--border-color);
 }
 
@@ -979,28 +979,28 @@ body.dark-theme .cta-wrapper.lazy-bg {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 }
 
-.feedback-form {
+.show-data-form {
     display: flex;
     flex-direction: column;
     gap: 18px;
 }
 
-.lth-form-group {
+.lth-form-section {
     display: flex;
     flex-direction: column;
     gap: 6px;
     margin-bottom: 18px;
 }
 
-.lth-form-group label {
+.lth-form-section label {
     font-weight: 700;
     font-size: 0.9rem;
     color: var(--text-main);
 }
 
-.lth-form-group input,
-.lth-form-group select,
-.lth-form-group textarea {
+.lth-form-section input,
+.lth-form-section select,
+.lth-form-section textarea {
     padding: 10px 14px;
     border: 1px solid var(--border-color);
     border-radius: 6px;
@@ -1013,9 +1013,9 @@ body.dark-theme .cta-wrapper.lazy-bg {
     width: 100%;
 }
 
-.lth-form-group input:focus,
-.lth-form-group select:focus,
-.lth-form-group textarea:focus {
+.lth-form-section input:focus,
+.lth-form-section select:focus,
+.lth-form-section textarea:focus {
     outline: none;
     border-color: var(--text-main);
 }

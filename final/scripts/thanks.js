@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const actionWrapper = document.createElement('div');
     actionWrapper.className = 'results-action-wrapper';
     actionWrapper.innerHTML = `
-        <button id="confirm-send-btn" class="lth-btn lth-btn-primary">Confirm & Send to Team</button>
+        <button id="confirm-send-btn" class="lth-button lth-button-model1">Confirm & Send to Team</button>
     `;
     container.appendChild(actionWrapper);
 
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
                 actionWrapper.innerHTML = `
-                    <a href="contact.html" class="lth-btn lth-btn-primary">Send Another Message</a>
+                    <a href="contact.html" class="lth-button lth-button-model1">Send Another Message</a>
                 `;
                 container.appendChild(actionWrapper);
             } else {
