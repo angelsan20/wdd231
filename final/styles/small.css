@@ -286,6 +286,7 @@ body.dark-theme img[src*="github"] {
     background-color: var(--accent-yellow);
     color: #000000 !important;
     font-weight: 800;
+    text-decoration: none;
 }
 
 .lth-btn-primary:hover {
@@ -299,6 +300,7 @@ body.dark-theme img[src*="github"] {
     background-color: var(--bg-surface);
     color: var(--text-main);
     border: 1px solid var(--border-color);
+    text-decoration: none;
 }
 
 .lth-btn-secondary:hover {
@@ -955,6 +957,7 @@ body.dark-theme .cta-container.lazy-bg {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    margin-bottom: 18px;
 }
 
 .lth-form-group label {
@@ -975,6 +978,7 @@ body.dark-theme .cta-container.lazy-bg {
     font-family: inherit;
     font-weight: 600;
     transition: border-color var(--transition-speed);
+    width: 100%;
 }
 
 .lth-form-group input:focus,
