@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return await window.getStoredData();
         }
         const stored = localStorage.getItem('lifeToolsData');
-        return stored ? JSON.parse(stored) : [];
+        let parsed = [];
+        try { parsed = stored ? JSON.parse(stored) : []; } catch(e) {}
+        return Array.isArray(parsed) ? parsed : [];
     }
 
     function saveStoredData(data) {

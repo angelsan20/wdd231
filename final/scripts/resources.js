@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return await window.getStoredData();
         }
         const stored = localStorage.getItem('lifeToolsData');
-        return stored ? JSON.parse(stored) : [];
+        let parsed = [];
+        try { parsed = stored ? JSON.parse(stored) : []; } catch(e) {}
+        return Array.isArray(parsed) ? parsed : [];
     }
 
     function saveStoredData(data) {
@@ -26,13 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await getStoredData();
         container.innerHTML = '';
 
+        if (!Array.isArray(data)) return;
+
         data.forEach(category => {
             if (category.isHidden) return;
 
             const categoryEl = document.createElement('section');
             categoryEl.className = 'category-card-column';
 
-            const visibleTools = category.tools.filter(t => !t.isHidden);
+            const visibleTools = (category.tools || []).filter(t => !t.isHidden);
             const sortedTools = [...visibleTools].sort((a, b) => (b.isFavorite || 0) - (a.isFavorite || 0));
 
             let toolsHTML = sortedTools.map(tool => {
@@ -119,9 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         managerBtn.onclick = async () => {
             const data = await getStoredData();
+            if (!Array.isArray(data)) return;
             
             const hiddenCats = data.filter(c => c.isHidden);
-            const catsWithHiddenTools = data.filter(c => !c.isHidden && c.tools.some(t => t.isHidden));
+            const catsWithHiddenTools = data.filter(c => !c.isHidden && (c.tools || []).some(t => t.isHidden));
 
             const hasHiddenItems = hiddenCats.length > 0 || catsWithHiddenTools.length > 0;
 
@@ -149,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 catsWithHiddenTools.forEach((cat, index) => {
-                    const hiddenTools = cat.tools.filter(t => t.isHidden);
+                    const hiddenTools = (cat.tools || []).filter(t => t.isHidden);
                     managerHTML += `<div class="manager-category-item" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden;">
                         <div class="manager-cat-header" data-target="cat-tools-${index}" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: var(--bg-primary); cursor: pointer; user-select: none;">
                             <div style="display: flex; align-items: center; gap: 8px; font-weight: bold; font-size: 0.9rem;">
@@ -208,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const tId = b.dataset.tool;
                     const d = await getStoredData();
                     const c = d.find(x => x.id === cId);
-                    const t = c?.tools.find(x => x.id === tId);
+                    const t = (c?.tools || []).find(x => x.id === tId);
                     if(t) { t.isHidden = false; saveStoredData(d); modal.close(); renderDirectory(); }
                 };
             });
@@ -329,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const category = data.find(c => c.id === catId);
                 if (!category) return;
 
-                const count = category.tools.length;
+                const count = (category.tools || []).length;
 
                 if (modal && modalBody) {
                     modalBody.innerHTML = `
@@ -366,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const catId = card.dataset.cat;
                 const data = await getStoredData();
                 const category = data.find(c => c.id === catId);
-                const tool = category?.tools.find(t => t.id === toolId);
+                const tool = (category?.tools || []).find(t => t.id === toolId);
                 if (tool) {
                     tool.isHidden = true;
                     saveStoredData(data);
@@ -398,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await getStoredData();
                 const category = data.find(c => c.id === catId);
                 if (category) {
-                    const tool = category.tools.find(t => t.id === toolId);
+                    const tool = (category.tools || []).find(t => t.id === toolId);
                     if (tool) {
                         tool.isFavorite = !tool.isFavorite;
                         saveStoredData(data);
@@ -416,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const catId = card.dataset.cat;
                 const data = await getStoredData();
                 const category = data.find(c => c.id === catId);
-                const tool = category?.tools.find(t => t.id === toolId);
+                const tool = (category?.tools || []).find(t => t.id === toolId);
 
                 if (tool && modal && modalBody) {
                     let domain = "example.com";
@@ -679,6 +684,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const catId = catName.toLowerCase().replace(/\s+/g, '-');
 
                     const data = await getStoredData();
+                    if (!Array.isArray(data)) return;
+
                     if (data.some(c => c.id === catId)) {
                         alert("Category already exists!");
                         return;
