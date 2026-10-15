@@ -1,0 +1,52 @@
+index.html
+
+<meta property="og:type" content="website">
+    <meta property="og:title" content="Life Tools Hub | Digital Resource & Productivity Hub">
+    <meta property="og:description" content="Life Tools Hub is a centralized platform to organize, manage, and discover digital resources for programming, cooking, fitness, and entertainment.">
+    <meta property="og:image" content="https://angelsan20.github.io/wdd231/final/images/hero-banner.webp">
+    <meta property="og:url" content="https://angelsan20.github.io/wdd231/final/index.html">
+
+
+resources.html
+
+<meta property="og:type" content="website">
+    <meta property="og:title" content="Resource Directory | Life Tools Hub">
+    <meta property="og:description" content="Explore categorized digital resources, bookmark your favorites, and create custom tool lists in Life Tools Hub.">
+    <meta property="og:image" content="https://angelsan20.github.io/wdd231/final/images/hero-banner.webp">
+    <meta property="og:url" content="https://angelsan20.github.io/wdd231/final/resources.html">
+
+
+import/export.html
+
+<meta property="og:type" content="website">
+    <meta property="og:title" content="Import & Export Data | Life Tools Hub">
+    <meta property="og:description" content="Backup, export, or import custom JSON tool lists securely in Life Tools Hub.">
+    <meta property="og:image" content="https://angelsan20.github.io/wdd231/final/images/hero-banner.webp">
+    <meta property="og:url" content="https://angelsan20.github.io/wdd231/final/import-export.html">
+
+
+contact.html
+
+<meta property="og:type" content="website">
+    <meta property="og:title" content="Contact & Feedback | Life Tools Hub">
+    <meta property="og:description" content="Send suggestions, feedback, or report link issues to the Life Tools Hub development team.">
+    <meta property="og:image" content="https://angelsan20.github.io/wdd231/final/images/hero-banner.webp">
+    <meta property="og:url" content="https://angelsan20.github.io/wdd231/final/contact.html">
+
+
+disclaimer.html
+
+<meta property="og:type" content="website">
+    <meta property="og:title" content="Trademark & Legal Disclaimer | Life Tools Hub">
+    <meta property="og:description" content="Read the terms, conditions, and legal disclaimer for LTH. Understand our content usage policies and third-party link disclaimers.">
+    <meta property="og:image" content="https://angelsan20.github.io/wdd231/final/images/hero-banner.webp">
+    <meta property="og:url" content="https://angelsan20.github.io/wdd231/final/disclaimer.html">
+
+
+thanks.html
+
+<meta property="og:type" content="website">
+    <meta property="og:title" content="Feedback Received | Life Tools Hub">
+    <meta property="og:description" content="Thank you for your feedback submission to the Life Tools Hub team.">
+    <meta property="og:image" content="https://angelsan20.github.io/wdd231/final/images/hero-banner.webp">
+    <meta property="og:url" content="https://angelsan20.github.io/wdd231/final/thanks.html">
