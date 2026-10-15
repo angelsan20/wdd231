@@ -69,10 +69,12 @@ main {
     color: var(--text-main);
     font-weight: 700;
     font-size: 1.25rem;
+    border-radius: 4px;
 }
 
 .logo-icon {
     font-size: 1.4rem;
+    border-radius: 8px;
 }
 
 .header-actions {
