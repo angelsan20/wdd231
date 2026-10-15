@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const logoSrc = tool.logo || `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
                 const customBadge = tool.isCustom ? `<span class="tool-badge-custom" title="Created by user">Custom</span>` : '';
                 return `
-                    <article class="resource-og-card ${tool.isFavorite ? 'favorite-active' : ''}" data-id="${tool.id}" data-cat="${category.id}">
+                    <div class="resource-og-card ${tool.isFavorite ? 'favorite-active' : ''}" data-id="${tool.id}" data-cat="${category.id}">
                         <div class="og-card-logo-container">
                             <img src="${logoSrc}" alt="${tool.name} logo" class="og-card-logo" loading="lazy">
                         </div>
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <p class="og-card-desc">${tool.desc}</p>
                         </div>
-                    </article>
+                    </div>
                 `;
             }).join('');
 
@@ -629,7 +629,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const toolUrl = document.getElementById('new-tool-url').value.trim();
                         const toolDesc = document.getElementById('new-tool-desc').value.trim();
 
-                        let cleanDomain = "example.com";
+                        let cleanDo = "example.com";
                         try { cleanDomain = new URL(toolUrl).hostname; } catch(err) {}
 
                         category.tools.push({
