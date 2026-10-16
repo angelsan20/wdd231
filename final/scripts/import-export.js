@@ -1,23 +1,11 @@
+import { getStoredData, saveStoredData, mergeImportedData } from './storage.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const checklistContainer = document.getElementById('export-checklist-container');
     const exportBtn = document.getElementById('export-json-btn');
     const importFileInput = document.getElementById('import-file-input');
     const modal = document.getElementById('lth-modal');
     const modalBody = document.getElementById('modal-body');
-
-    async function getStoredData() {
-        if (typeof window.getStoredData === 'function') {
-            return await window.getStoredData();
-        }
-        const stored = localStorage.getItem('lifeToolsData');
-        let parsed = [];
-        try { parsed = stored ? JSON.parse(stored) : []; } catch(e) {}
-        return Array.isArray(parsed) ? parsed : [];
-    }
-
-    function saveStoredData(data) {
-        localStorage.setItem('lifeToolsData', JSON.stringify(data));
-    }
 
     async function renderChecklist() {
         if (!checklistContainer) return;
@@ -54,10 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('.cat-select-all-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                const catIdx = btn.dataset.catIndex;
                 const groupCard = btn.closest('.checklist-group');
                 const checkboxes = groupCard.querySelectorAll('.tool-checkbox');
-                
                 const allChecked = Array.from(checkboxes).every(cb => cb.checked);
                 checkboxes.forEach(cb => cb.checked = !allChecked);
             });
@@ -120,26 +106,65 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!file) return;
 
             const reader = new FileReader();
-            reader.onload = (event) => {
+            reader.onload = async (event) => {
                 try {
                     const importedData = JSON.parse(event.target.result);
                     if (!Array.isArray(importedData)) throw new Error("Invalid format");
 
-                    saveStoredData(importedData);
-                    renderChecklist();
+                    const currentData = await getStoredData();
+                    const cleanData = mergeImportedData(currentData, importedData);
+                    saveStoredData(cleanData);
 
-                    if (modal && modalBody) {
-                        modalBody.innerHTML = `
-                            <div class="modal-form-container" style="text-align: center; padding: 10px;">
-                                <span class="lth-modal-tag">Success</span>
-                                <h2 style="margin: 15px 0 10px 0;">Backup Imported Successfully</h2>
-                                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">Your data has been successfully imported and synced across your device.</p>
-                                <button id="close-success-btn" class="lth-button lth-button-model1">Continue</button>
-                            </div>
-                        `;
-                        modal.showModal();
-                        document.getElementById('close-success-btn').onclick = () => modal.close();
+                    let toast = document.getElementById('lth-toast-notification');
+                    if (!toast) {
+                        toast = document.createElement('div');
+                        toast.id = 'lth-toast-notification';
+                        document.body.appendChild(toast);
                     }
+
+                    toast.style.cssText = `
+                        position: fixed;
+                        inset: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(0, 0, 0, 0.4);
+                        z-index: 9999;
+                        opacity: 0;
+                        transition: opacity 0.3s ease-in-out;
+                    `;
+
+                    toast.innerHTML = `
+                        <div style="
+                            background-color: var(--bg-surface, #1e293b);
+                            color: var(--text-main, #f8fafc);
+                            padding: 20px 30px;
+                            border-radius: 12px;
+                            border: 1px solid var(--accent-green, #10B981);
+                            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+                            font-size: 1.05rem;
+                            font-weight: 600;
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                            max-width: 90%;
+                            text-align: center;
+                        ">
+                            <span style="font-size: 1.3rem;">✅</span> 
+                            <span>Your backup file has been successfully loaded!</span>
+                        </div>
+                    `;
+
+                    setTimeout(() => { toast.style.opacity = '1'; }, 10);
+
+                    setTimeout(() => {
+                        toast.style.opacity = '0';
+                        setTimeout(() => {
+                            if (toast) toast.remove();
+                            window.location.href = 'resources.html';
+                        }, 300);
+                    }, 1200);
+
                 } catch (error) {
                     if (modal && modalBody) {
                         modalBody.innerHTML = `

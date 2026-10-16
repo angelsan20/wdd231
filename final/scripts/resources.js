@@ -1,19 +1,7 @@
+// scripts/resources.js
+import { getStoredData, saveStoredData } from './storage.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-
-    async function getStoredData() {
-        if (typeof window.getStoredData === 'function') {
-            return await window.getStoredData();
-        }
-        const stored = localStorage.getItem('lifeToolsData');
-        let parsed = [];
-        try { parsed = stored ? JSON.parse(stored) : []; } catch(e) {}
-        return Array.isArray(parsed) ? parsed : [];
-    }
-
-    function saveStoredData(data) {
-        localStorage.setItem('lifeToolsData', JSON.stringify(data));
-    }
-
     const container = document.getElementById('categories-container');
     const modal = document.getElementById('lth-modal');
     const modalBody = document.getElementById('modal-body');
@@ -629,7 +617,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const toolUrl = document.getElementById('new-tool-url').value.trim();
                         const toolDesc = document.getElementById('new-tool-desc').value.trim();
 
-                        let cleanDo = "example.com";
+                        let cleanDomain = "example.com";
                         try { cleanDomain = new URL(toolUrl).hostname; } catch(err) {}
 
                         category.tools.push({
