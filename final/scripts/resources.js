@@ -341,39 +341,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     document.getElementById('cancel-del-cat').onclick = () => modal.close();
                     document.getElementById('confirm-del-cat').onclick = async () => {
-                        // LÓGICA DE RESCATE: Antes de borrar la categoría, devolvemos los enlaces oficiales a su origen
+                        // LÓGICA DE RESCATE LOCAL PURA: Como las categorías padre originales siempre existen 
+                        // en el sistema (por ejemplo programming, fitness, cooking, entertainment), 
+                        // deducimos la categoría de origen o la buscamos directamente en el JSON base cargado por fetch.
                         try {
                             const response = await fetch('data/resources.json');
-                            const officialData = await response.json();
+                            if (response.ok) {
+                                const baseOfficialData = await response.json();
 
-                            category.tools.forEach(tool => {
-                                if (!tool.isCustom) {
-                                    // Buscamos dónde pertenece originalmente en el JSON base
-                                    let originalCat = officialData.find(oc => oc.tools.some(ot => ot.id === tool.id));
-                                    if (originalCat) {
-                                        let targetCatInStorage = data.find(dc => dc.id === originalCat.id);
-                                        if (targetCatInStorage) {
-                                            // Si la categoría de origen existe en el storage y no tiene la herramienta, la regresamos
-                                            if (!targetCatInStorage.tools.some(t => t.id === tool.id)) {
-                                                targetCatInStorage.tools.push(tool);
+                                category.tools.forEach(tool => {
+                                    if (!tool.isCustom) {
+                                        // 1. Buscamos en qué categoría oficial del JSON base vivía originalmente esta herramienta
+                                        const officialCat = baseOfficialData.find(oc => oc.tools.some(ot => ot.id === tool.id));
+                                        
+                                        if (officialCat) {
+                                            // 2. Buscamos esa categoría padre oficial dentro de los datos actuales del usuario (data)
+                                            let targetCatInStorage = data.find(dc => dc.id === officialCat.id);
+                                            
+                                            if (targetCatInStorage) {
+                                                // Si la categoría padre existe y no contiene la herramienta, se la devolvemos
+                                                if (!targetCatInStorage.tools.some(t => t.id === tool.id)) {
+                                                    targetCatInStorage.tools.push(tool);
+                                                }
+                                            } else {
+                                                // Si por alguna razón la categoría padre fue ocultada, la restauramos asegurando su existencia
+                                                data.push({
+                                                    id: officialCat.id,
+                                                    name: officialCat.name,
+                                                    tools: [tool],
+                                                    isHidden: false
+                                                });
                                             }
                                         } else {
-                                            // Si por alguna razón la categoría base no estuviera, la agregamos de vuelta
-                                            data.push(originalCat);
-                                        }
-                                    } else {
-                                        // Fallback a la primera categoría por defecto si no se encuentra
-                                        if (data.length > 0) {
-                                            data[0].tools.push(tool);
+                                            // Fallback ultra seguro: mandar la herramienta a la primera categoría por defecto (ej. programming)
+                                            if (data.length > 0) {
+                                                data[0].tools.push(tool);
+                                            }
                                         }
                                     }
-                                }
-                            });
+                                });
+                            }
                         } catch (err) {
-                            console.error("Error recovering official tools during category deletion:", err);
+                            console.error("Error during official tools rescue:", err);
                         }
 
-                        // Eliminamos la categoría personalizada
+                        // Eliminamos únicamente la categoría personalizada seleccionada
                         const newData = data.filter(c => c.id !== catId);
                         saveStoredData(newData);
                         modal.close();
@@ -629,7 +641,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <input type="text" id="new-tool-name" required placeholder="e.g. My Custom Page">
                                 </div>
                                 <div class="lth-form-section">
-                                    <label-for="new-tool-url">Tool URL *</label>
+                                    <label for="new-tool-url">Tool URL *</label>
                                     <input type="url" id="new-tool-url" required placeholder="https://example.com">
                                 </div>
                                 <div class="lth-form-section">
