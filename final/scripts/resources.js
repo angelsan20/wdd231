@@ -1,4 +1,3 @@
-// scripts/resources.js
 import { getStoredData, saveStoredData } from './storage.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -342,6 +341,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     document.getElementById('cancel-del-cat').onclick = () => modal.close();
                     document.getElementById('confirm-del-cat').onclick = async () => {
+                        // LÓGICA DE RESCATE: Antes de borrar la categoría, devolvemos los enlaces oficiales a su origen
+                        try {
+                            const response = await fetch('data/resources.json');
+                            const officialData = await response.json();
+
+                            category.tools.forEach(tool => {
+                                if (!tool.isCustom) {
+                                    // Buscamos dónde pertenece originalmente en el JSON base
+                                    let originalCat = officialData.find(oc => oc.tools.some(ot => ot.id === tool.id));
+                                    if (originalCat) {
+                                        let targetCatInStorage = data.find(dc => dc.id === originalCat.id);
+                                        if (targetCatInStorage) {
+                                            // Si la categoría de origen existe en el storage y no tiene la herramienta, la regresamos
+                                            if (!targetCatInStorage.tools.some(t => t.id === tool.id)) {
+                                                targetCatInStorage.tools.push(tool);
+                                            }
+                                        } else {
+                                            // Si por alguna razón la categoría base no estuviera, la agregamos de vuelta
+                                            data.push(originalCat);
+                                        }
+                                    } else {
+                                        // Fallback a la primera categoría por defecto si no se encuentra
+                                        if (data.length > 0) {
+                                            data[0].tools.push(tool);
+                                        }
+                                    }
+                                }
+                            });
+                        } catch (err) {
+                            console.error("Error recovering official tools during category deletion:", err);
+                        }
+
+                        // Eliminamos la categoría personalizada
                         const newData = data.filter(c => c.id !== catId);
                         saveStoredData(newData);
                         modal.close();
@@ -597,7 +629,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <input type="text" id="new-tool-name" required placeholder="e.g. My Custom Page">
                                 </div>
                                 <div class="lth-form-section">
-                                    <label for="new-tool-url">Tool URL *</label>
+                                    <label-for="new-tool-url">Tool URL *</label>
                                     <input type="url" id="new-tool-url" required placeholder="https://example.com">
                                 </div>
                                 <div class="lth-form-section">
